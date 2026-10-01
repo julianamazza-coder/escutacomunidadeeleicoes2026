@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Escuta da comunidade: o que a audiência comentou nos primeiros posts da campanha da reta final do primeiro turno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* Tokens de marca: ajuste os hex para os oficiais de cada canal */
+  :root{
+    --alana:#FFD400; --lunetas:#EE6FA6; --lunetas-2:#2747A8; --cen:#2F9A4E;
+    --ink:#000; --paper:#fff; --muted:#5A5A5A; --line:#E3E3E3; --soft:#F2F2F2;
+    --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+    --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink)}
+  body{font-family:var(--body);font-size:17px;line-height:1.55}
+  :focus-visible{outline:3px solid var(--lunetas-2);outline-offset:3px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .alana{--c:var(--alana)} .lunetas{--c:var(--lunetas)} .cen{--c:var(--cen)}
+
+  header.hero{background:var(--alana);padding:48px 0 36px}
+  .kicker{font-family:var(--display);font-weight:800;font-size:1.25rem;margin:0 0 8px}
+  .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,3rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 18px;max-width:26ch}
+  .lede{font-size:1.1rem;max-width:62ch;margin:0 0 22px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.95rem}
+  .meta span{border-top:2px solid var(--ink);padding-top:6px}
+
+  /* Navegação por abas: barra preta fixa */
+  nav.tabbar{position:sticky;top:0;z-index:10;background:var(--ink)}
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding:10px 0}
+  .tabs button{flex:none;font:700 .98rem var(--display);border:2px solid #fff;background:transparent;color:#fff;padding:9px 16px;border-radius:999px;cursor:pointer}
+  .tabs button[aria-selected="true"]{background:var(--alana);border-color:var(--alana);color:var(--ink)}
+  .tabs button:hover{text-decoration:underline}
+  [role="tabpanel"][hidden]{display:none}
+
+  h2{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.1;letter-spacing:-.01em;margin:0 0 8px}
+  h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin:0 0 6px}
+  section{padding:40px 0;border-top:1px solid var(--line)}
+  [role="tabpanel"] > section:first-child{border-top:0}
+  .intro{color:var(--muted);max-width:68ch;margin:0 0 24px}
+  .intro.small{font-size:.92rem}
+  .fine{color:var(--muted);font-size:.85rem;margin:12px 0 0}
+  .note{background:var(--soft);padding:14px 16px;font-size:.95rem;max-width:72ch}
+
+  .waffle-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px}
+  .waffle-head h2{margin:0}
+  .waffle{display:grid;grid-template-columns:repeat(auto-fill,minmax(18px,1fr));gap:4px}
+  .cell{aspect-ratio:1;border-radius:3px;background:var(--c)}
+  .cell.alana{box-shadow:inset 0 0 0 1px rgba(0,0,0,.35)}
+  .cell.n{opacity:.35}
+  .cell.c{background:repeating-linear-gradient(45deg,var(--c) 0 2px,#fff 2px 5px);box-shadow:inset 0 0 0 2px var(--c)}
+  .legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.92rem;color:var(--muted);margin-top:14px}
+  .sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px;background:var(--c)}
+  .sw.alana{box-shadow:inset 0 0 0 1px rgba(0,0,0,.35)}
+  .sw.n{opacity:.35}
+  .sw.c{background:repeating-linear-gradient(45deg,var(--c) 0 2px,#fff 2px 5px);box-shadow:inset 0 0 0 2px var(--c)}
+  .sw.grey{--c:#8A8A8A}
+
+  .keys{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--ink)}
+  .keys div{padding:18px;border-right:2px solid var(--ink)}
+  .keys div:last-child{border-right:0}
+  .keys b{display:block;font-family:var(--display);font-weight:800;font-size:2.2rem;line-height:1}
+  .keys small{display:block;margin-top:6px;font-size:.92rem}
+
+  .tone-bar{display:flex;height:46px;border:2px solid var(--ink);margin:6px 0 12px}
+  .tone-bar span{display:flex;align-items:center;padding:0 12px;font-weight:700;white-space:nowrap;overflow:hidden}
+  .t-a{background:var(--ink);color:#fff} .t-n{background:#BDBDBD}
+  .t-c{background:repeating-linear-gradient(45deg,#000 0 2px,#fff 2px 8px)}
+  .tone-key{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:.95rem}
+  .tone-key i{display:inline-block;width:18px;height:18px;vertical-align:-4px;margin-right:8px;border:1px solid #000}
+
+  .bars{display:grid;gap:14px}
+  .bar-row{display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:16px;align-items:start}
+  .bar-row .label b{display:block}
+  .bar-row .label small{color:var(--muted);font-size:.88rem}
+  .track{background:var(--soft);height:28px;display:flex;align-items:center}
+  .fill{height:100%;background:var(--ink);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-weight:700;font-size:.9rem}
+  .out{padding-left:8px;font-weight:700;font-size:.9rem;color:var(--ink);white-space:nowrap}
+  .bar-row p{grid-column:2;margin:6px 0 0;font-size:.93rem;color:var(--muted)}
+  .zero .label b{color:var(--muted)}
+
+  .channels{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .ch{border-top:10px solid var(--c);padding:18px 0 0}
+  .ch .fmt{font-size:.9rem;color:var(--muted);margin:0 0 12px}
+  .ch dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:.95rem}
+  .ch dt{font-weight:700} .ch dd{margin:0}
+  .ch.lunetas h3{color:var(--lunetas-2)} .ch.cen h3{color:var(--cen)}
+  .mini{display:flex;height:18px;margin:4px 0 8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+  .mini span{height:100%}
+  .mini .a{background:var(--c)} .mini .n{background:var(--c);opacity:.35}
+  .mini .c{background:repeating-linear-gradient(45deg,var(--c) 0 2px,#fff 2px 5px)}
+  .mini-key{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.86rem;margin:0 0 14px}
+  .mini-key .sw{width:12px;height:12px;margin-right:5px}
+
+  table{border-collapse:collapse;width:100%;font-size:.96rem}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--display);font-weight:700;border-bottom:2px solid var(--ink)}
+  td.num{font-weight:700;white-space:nowrap}
+  .scroll{overflow-x:auto}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .two ul{margin:0;padding-left:20px} .two li{margin-bottom:10px}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .cards.three{grid-template-columns:repeat(3,1fr)}
+  .card{border:2px solid var(--ink);padding:18px}
+  .card p{margin:0 0 8px} .card p:last-child{margin:0}
+  .card .tag{display:inline-block;font-size:.82rem;font-weight:700;background:var(--alana);padding:2px 8px;border-radius:4px;margin-bottom:10px}
+  .card .big{font-family:var(--display);font-weight:800;font-size:1.9rem;line-height:1;margin:4px 0 8px}
+  .card.wide{max-width:72ch}
+  .alerts li{margin-bottom:10px;max-width:78ch}
+
+  /* Exemplos */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+  .filters button{font:700 .95rem var(--body);border:2px solid var(--ink);background:#fff;padding:7px 14px;border-radius:999px;cursor:pointer}
+  .filters button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .ex-group{margin-bottom:34px}
+  .ex-group > p{color:var(--muted);font-size:.93rem;margin:0 0 14px;max-width:70ch}
+  .quotes{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  blockquote{margin:0;padding:14px 16px 12px;border-left:8px solid var(--c);background:var(--soft)}
+  blockquote p{margin:0 0 10px;font-size:1.02rem}
+  blockquote .src{color:var(--muted);font-size:.85rem}
+  .ex-group.empty{display:none}
+
+  /* Nuvem */
+  .cloud{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 18px;padding:36px 24px;min-height:320px;border:2px solid var(--ink);transition:background .25s}
+  .cloud span{font-family:var(--display);font-weight:700;line-height:1.05;cursor:default}
+  .cloud span small{font-family:var(--body);font-weight:400;font-size:.8rem;opacity:.7;margin-left:2px}
+  .cloud.v-alana{background:var(--alana)}
+  .cloud.v-alana span{color:var(--ink)}
+  .cloud.v-lunetas span:nth-child(odd){color:#C2397A} .cloud.v-lunetas span:nth-child(even){color:var(--lunetas-2)}
+  .cloud.v-cen span{color:#1F6E37}
+  .cloud.v-all span{color:var(--ink)}
+  .cloud.v-all span.d-alana{background:var(--alana);padding:0 4px}
+  .cloud.v-all span.d-cen{color:#1F6E37}
+
+  /* Narrativa */
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:2px solid var(--ink)}
+  .flow div{padding:16px;border-right:2px solid var(--ink);position:relative}
+  .flow div:last-child{border-right:0}
+  .flow b{display:block;font-family:var(--display);font-size:1.05rem}
+  .flow .n{font-family:var(--display);font-weight:800;font-size:1.8rem;line-height:1.1;margin:8px 0 4px}
+  .flow small{display:block;font-size:.86rem;color:var(--muted)}
+  .flow div.gap{background:repeating-linear-gradient(45deg,#fff 0 6px,#F2F2F2 6px 12px)}
+  .lens{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .lens article{border-top:10px solid var(--c);padding-top:14px}
+  .lens .said{font-size:.95rem}
+  .lens .said b{display:block;font-size:.85rem;color:var(--muted);margin-top:10px}
+  .moves{display:grid;gap:12px}
+  .move{display:grid;grid-template-columns:200px 1fr 140px;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:start}
+  .move .st{font-weight:700;font-size:.9rem}
+  .st.ok{color:#1F6E37} .st.part{color:#8A5A00} .st.no{color:#B0003A}
+
+  footer.page{background:var(--ink);color:#fff;padding:32px 0;font-size:.92rem}
+  footer.page p{max-width:80ch;margin:0 0 10px}
+
+  @media (max-width:860px){
+    .keys{grid-template-columns:1fr 1fr}
+    .keys div:nth-child(2){border-right:0}
+    .keys div:nth-child(-n+2){border-bottom:2px solid var(--ink)}
+    .channels,.two,.cards,.cards.three,.lens{grid-template-columns:1fr}
+    .bar-row,.move{grid-template-columns:1fr}
+    .bar-row p{grid-column:1}
+    .flow{grid-template-columns:1fr}
+    .flow div{border-right:0;border-bottom:2px solid var(--ink)}
+    .flow div:last-child{border-bottom:0}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .cell{animation:pop .4s ease-out both}
+    @keyframes pop{from{transform:scale(.4);opacity:0}}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Escuta da comunidade</p>
+    <h1>O que a audiência comentou nos primeiros posts da campanha da reta final do primeiro turno</h1>
+    <p class="lede">Leitura conjunta dos comentários dos três primeiros posts da Rede Alana na campanha. Os canais são lidos lado a lado como ponto de partida da mesma narrativa.</p>
+    <div class="meta">
+      <span>Instituto Alana · Lunetas · Criança e Natureza</span>
+      <span>29/09 a 01/10/2026</span>
+      <span>Criança e Consumo entra na próxima leitura</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabbar" aria-label="Abas do painel">
+  <div class="wrap">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-painel" aria-controls="painel" aria-selected="true">Painel</button>
+      <button role="tab" id="tab-exemplos" aria-controls="exemplos" aria-selected="false" tabindex="-1">Exemplos de comentários</button>
+      <button role="tab" id="tab-nuvem" aria-controls="nuvem" aria-selected="false" tabindex="-1">Nuvem de palavras</button>
+      <button role="tab" id="tab-narrativa" aria-controls="narrativa" aria-selected="false" tabindex="-1">Narrativa × conversa</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- ================= PAINEL ================= -->
+<div id="painel" role="tabpanel" aria-labelledby="tab-painel">
+
+<section>
+  <div class="wrap">
+    <div class="waffle-head">
+      <h2>Cada quadrado é um comentário</h2>
+      <p class="intro" style="margin:0">262 comentários válidos, agrupados por canal e por tom.</p>
+    </div>
+    <div class="waffle" id="waffle" role="img" aria-label="Grade com 262 comentários. Instituto Alana: 32, sendo 28 de apoio e 4 neutros. Lunetas: 226, sendo 170 de apoio, 34 neutros e 22 críticos. Criança e Natureza: 4 de apoio."></div>
+    <div class="legend">
+      <span><i class="sw alana"></i>Instituto Alana</span>
+      <span><i class="sw lunetas"></i>Lunetas</span>
+      <span><i class="sw cen"></i>Criança e Natureza</span>
+      <span><i class="sw grey"></i>Cor cheia: apoio</span>
+      <span><i class="sw grey n"></i>Cor clara: neutro ou só eleitoral</span>
+      <span><i class="sw grey c"></i>Listrado: crítica (as 22 críticas são do Lunetas)</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Panorama geral</h2>
+    <div class="keys">
+      <div><b>262</b><small>comentários válidos</small></div>
+      <div><b>225</b><small>perfis únicos (2 perfis comentaram em dois canais)</small></div>
+      <div><b>3</b><small>posts, um por canal</small></div>
+      <div><b>~3 dias</b><small>de 29/09 a 01/10</small></div>
+    </div>
+    <p class="fine">Excluímos 3 registros (1 duplicata e 2 comentários vazios). Não houve comentários das marcas nem respostas automáticas.</p>
+    <h3 style="margin-top:32px">Distribuição de tom</h3>
+    <div class="tone-bar" role="img" aria-label="Apoio 77,1%, neutro 14,5%, crítica 8,4%">
+      <span class="t-a" style="width:77.1%">202 · 77,1%</span>
+      <span class="t-n" style="width:14.5%">38 · 14,5%</span>
+      <span class="t-c" style="width:8.4%"></span>
+    </div>
+    <div class="tone-key">
+      <span><i class="t-a"></i><b>Apoio</b> 202 (77,1%)</span>
+      <span><i class="t-n"></i><b>Neutro, dúvida ou só eleitoral</b> 38 (14,5%)</span>
+      <span><i class="t-c"></i><b>Crítica</b> 22 (8,4%)</span>
+    </div>
+    <p class="note" style="margin-top:18px">Clima geral: emoção e reconhecimento predominam, puxados por relatos de quem chegou mais longe que os pais por meio de políticas públicas. A crítica é pequena e concentrada: um único perfil escreveu 12 dos 22 comentários críticos.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Do que a conversa tratou</h2>
+    <p class="intro small">Um comentário pode aparecer em mais de um tema. Percentuais sobre os 262 comentários válidos. Os exemplos desta seção são paráfrases; trechos reais estão na aba de exemplos.</p>
+    <div class="bars" id="clusters"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>O perfil da conversa em cada canal</h2>
+    <p class="intro">Os três posts tiveram formatos, volumes e momentos diferentes, então as diferenças abaixo descrevem o tipo de conversa que cada formato abriu.</p>
+    <div class="channels">
+      <article class="ch alana">
+        <h3>Instituto Alana</h3>
+        <p class="fmt">Reels, 30/09. Repost: os comentários do post original, arquivado, não estão na base.</p>
+        <div class="mini" role="img" aria-label="87,5% apoio, 12,5% neutro"><span class="a" style="width:87.5%"></span><span class="n" style="width:12.5%"></span></div>
+        <div class="mini-key"><span><i class="sw alana"></i>Apoio 87,5%</span><span><i class="sw alana n"></i>Neutro 12,5%</span></div>
+        <dl>
+          <dt>32</dt><dd>comentários (12% da base)</dd>
+          <dt>Tom</dt><dd>28 apoio, 4 neutros, nenhuma crítica</dd>
+          <dt>Destaque</dt><dd>Relatos da infância concreta: merenda, transporte escolar rural, vacinação, escola infantil com natureza</dd>
+        </dl>
+      </article>
+      <article class="ch lunetas">
+        <h3>Lunetas</h3>
+        <p class="fmt">Carrossel com curadoria de vídeos, 29/09. Primeiro a ir ao ar e com mais tempo de exposição.</p>
+        <div class="mini" role="img" aria-label="75,2% apoio, 15% neutro, 9,7% crítica"><span class="a" style="width:75.2%"></span><span class="n" style="width:15%"></span><span class="c" style="width:9.8%"></span></div>
+        <div class="mini-key"><span><i class="sw lunetas"></i>Apoio 75,2%</span><span><i class="sw lunetas n"></i>Neutro 15,0%</span><span><i class="sw lunetas c"></i>Crítica 9,7%</span></div>
+        <dl>
+          <dt>226</dt><dd>comentários (86% da base)</dd>
+          <dt>Tom</dt><dd>170 apoio, 34 neutros, 22 críticas</dd>
+          <dt>Destaque</dt><dd>Relatos de acesso à universidade. Ao nomear programas federais, o post abriu espaço para conversa sobre autoria e sobre o Bolsa Família</dd>
+        </dl>
+      </article>
+      <article class="ch cen">
+        <h3>Criança e Natureza</h3>
+        <p class="fmt">Carrossel, 30/09.</p>
+        <div class="mini" role="img" aria-label="100% apoio"><span class="a" style="width:100%"></span></div>
+        <div class="mini-key"><span><i class="sw cen"></i>Apoio 100%</span></div>
+        <dl>
+          <dt>4</dt><dd>comentários (2% da base)</dd>
+          <dt>Tom</dt><dd>4 apoio</dd>
+          <dt>Destaque</dt><dd>Valorização do contato com a natureza como aprendizado de respeito ao meio ambiente</dd>
+        </dl>
+      </article>
+    </div>
+    <p class="note" style="margin-top:22px">Lido em conjunto, o retrato é complementar. Os três posts fizeram a mesma pergunta e receberam respostas em escalas de vida diferentes: a infância vivida (Alana e CeN) e a trajetória adulta (Lunetas). Com 4 e 32 comentários, CeN e Alana são amostras pequenas para conclusões isoladas.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Menções a políticos, partidos e governos</h2>
+    <p class="intro">Contagem à parte do tom. Comentários que só declaram voto ou citam candidato, sem reagir ao conteúdo, foram classificados como neutros em relação ao post. São 27 casos.</p>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Citado</th><th>A favor</th><th>Contra</th><th>Teor</th></tr></thead>
+      <tbody>
+        <tr><td>Lula, PT ou número 13</td><td class="num">~45</td><td class="num">~8</td><td>A favor: declarações de voto e agradecimento por políticas. Contra: uso dos programas como vitrine eleitoral e endividamento do governo.</td></tr>
+        <tr><td>"Direita" ou "extrema direita" (genérico)</td><td class="num">—</td><td class="num">~5</td><td>Associação da direita à rejeição de programas sociais.</td></tr>
+        <tr><td>"Esquerda" (genérico)</td><td class="num">—</td><td class="num">1</td><td>Rótulo usado como desqualificação em réplica.</td></tr>
+        <tr><td>FHC e Sarney</td><td class="num">~4</td><td class="num">—</td><td>Citados como criadores de programas anteriores. Amostra pequena, quase toda de um único perfil.</td></tr>
+        <tr><td>Bolsonaro</td><td class="num">1</td><td class="num">1</td><td>Citado na disputa sobre o ProUni. Amostra pequena.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="intro" style="margin-top:14px">Cerca de 20% dos comentários (52) têm manifestação eleitoral. Quase todos estão no post do Lunetas, que também concentra o volume. Um perfil publicou 5 comentários seguidos em cerca de 30 segundos, 4 deles eleitorais.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Argumentos dos dois lados</h2>
+    <p class="intro">Números aproximados. Os temas aparecem com a mesma precisão para os dois lados.</p>
+    <div class="two">
+      <div>
+        <h3>Apoio</h3>
+        <ul>
+          <li><b>Ascensão pela educação (~33).</b> Filhos de trabalhadores que foram os primeiros da família a se formar.</li>
+          <li><b>Redução de desigualdade (~17).</b> Política pública como garantia de direitos e de equidade.</li>
+          <li><b>Voto como continuidade (~20).</b> A escolha nas urnas é ligada à manutenção dos programas.</li>
+          <li><b>Autoria e ampliação nos governos Lula (~8).</b> Criação do ProUni e expansão universitária.</li>
+          <li><b>Bolsa Família como complemento (~6).</b> A renda recebida volta para a economia.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Crítica</h3>
+        <ul>
+          <li><b>Programas anteriores ao PT (~12).</b> Origem de programas em governos anteriores. Concentrado em um perfil.</li>
+          <li><b>Dependência do benefício (~4).</b> O Bolsa Família desestimularia a busca por trabalho.</li>
+          <li><b>Carga tributária (~3).</b> A classe média sustentaria os programas sem ser rica.</li>
+          <li><b>Acesso sem oportunidade depois (~2).</b> O diploma não garante carreira. Amostra pequena.</li>
+          <li><b>Retorno da universidade pública (~2).</b> Questionamento da relevância da pesquisa. Amostra pequena.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Onde houve troca entre participantes</h2>
+    <p class="intro">Estimativa feita a partir de @menções, réplicas e discordância explícita.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Autoria das políticas</h3>
+        <p><b>26 comentários</b> de cerca de 10 perfis. Dois perfis somam 17 deles.</p>
+        <p>A troca foi em parte qualificada, com datas, leis e programas, e escalou para ironias e desqualificação da fonte.</p>
+      </div>
+      <div class="card">
+        <h3>Bolsa Família e trabalho</h3>
+        <p><b>18 comentários</b> de cerca de 12 perfis.</p>
+        <p>Foi a troca menos qualificada: generalizações sobre beneficiários e rótulos ideológicos, contestados por relatos de quem recebeu o benefício.</p>
+      </div>
+    </div>
+    <p class="intro" style="margin-top:16px">No conjunto, a troca é periférica (cerca de 17% da base). A maior parte da conversa é de relato e reconhecimento, sem debate.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Sinais que reforçam a estratégia de comunidade</h2>
+    <p class="intro">Organizados pelas categorias do nosso framework de leitura de comunidade. Contagens aproximadas sobre os 262 comentários.</p>
+    <div class="cards three">
+      <div class="card">
+        <span class="tag">Identificação emocional</span>
+        <p class="big">149</p>
+        <p>Comentários de emoção (116) e relatos de vida (33). A pergunta da legenda foi respondida em primeira pessoa: as pessoas contaram a própria história em vez de opinar sobre o tema.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Identificação emocional</span>
+        <p class="big" style="font-size:1.35rem;line-height:1.2">Quem se vê no conteúdo volta para conversar</p>
+        <p>Uma das pessoas retratadas na curadoria do Lunetas comentou para agradecer e pediu mais políticas de inclusão. É um caso só, mas reúne identificação, amplificação e ativação cívica, e combina com o maior volume de relatos no formato de curadoria (28 de 33).</p>
+      </div>
+      <div class="card">
+        <span class="tag">Amplificação e reconhecimento</span>
+        <p class="big">3</p>
+        <p>Comentários que só marcam outra pessoa. Um chama alguém para ver o post. Os outros dois marcam a autora de um relato publicado ali mesmo, como forma de celebrar a história dela: o post virou espaço de reconhecimento entre pessoas que se conhecem.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Debate e tensão</span>
+        <p class="big">~10</p>
+        <p>Respostas de cerca de 7 perfis que contestaram generalizações sobre beneficiários do Bolsa Família com relatos e argumentos, sem intervenção da marca. A própria comunidade defendeu o espaço de conversa.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Vínculo com o canal</span>
+        <p class="big">~13</p>
+        <p>Cerca de 6 comentários de afeto ou agradecimento direto ao canal ("Te amo, Lunetas", "obrigada pelo conteúdo") e cerca de 7 que reconhecem o formato de vídeos e a trend como algo que já acompanham e esperam.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Ativação cívica</span>
+        <p class="big">~20</p>
+        <p>Comentários que ligam a experiência pessoal a uma decisão pública, como o voto e a continuidade das políticas. O vínculo entre vida e decisão pública existe; o desafio é mantê-lo apartidário.</p>
+      </div>
+    </div>
+    <p class="fine">Mudança de comportamento, a quinta categoria do framework, não é observável nesta base, que traz apenas texto dos comentários.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Pontos de atenção</h2>
+    <ul class="alerts">
+      <li><b>Voz pública lê o post como posicionamento.</b> Um perfil público com audiência relevante comemorou que o canal "falasse de política" e associou o post a um número de candidatura. Cerca de 3 comentários fazem a mesma leitura, e 1 anuncia unfollow pelo motivo inverso. Amostra pequena.</li>
+      <li><b>Leitura partidária de um post apartidário:</b> cerca de 20% dos comentários são eleitorais.</li>
+      <li><b>Generalizações sobre beneficiários do Bolsa Família</b>, incluindo um relato de discurso pejorativo sobre nordestinos que foi contestado no próprio post.</li>
+      <li><b>Ataques pessoais em réplicas</b>, com ironias e rótulos ideológicos.</li>
+      <li><b>Afirmações factuais não verificadas</b> dos dois lados da disputa de autoria. A marca não deve endossá-las em respostas.</li>
+      <li><b>Repost do Alana:</b> um usuário pergunta por que o comentário dele sumiu, provavelmente porque havia comentado no reels arquivado.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Conexão com a narrativa</h2>
+    <p style="max-width:70ch">A conversa nasce da vida concreta, mas a vida concreta que mais aparece é a trajetória adulta: universidade, diploma, carreira. A infância em si, com creche, saúde, merenda, transporte e natureza, surge sobretudo quando a pergunta remete ao cotidiano da criança. Isso sugere que o ângulo da pergunta conduz a escala da resposta. O cruzamento completo está na aba Narrativa × conversa.</p>
+  </div>
+</section>
+</div>
+
+<!-- ================= EXEMPLOS ================= -->
+<div id="exemplos" role="tabpanel" aria-labelledby="tab-exemplos" hidden>
+<section>
+  <div class="wrap">
+    <h2>Curadoria de exemplos</h2>
+    <p class="intro">Trechos curtos de comentários reais, sem nome de usuário, escolhidos para ilustrar cada tema. Ficaram de fora comentários com dados pessoais sensíveis e falas ofensivas.</p>
+    <div class="filters" role="group" aria-label="Filtrar por canal">
+      <button aria-pressed="true" data-f="all">Todos</button>
+      <button aria-pressed="false" data-f="alana">Instituto Alana</button>
+      <button aria-pressed="false" data-f="lunetas">Lunetas</button>
+      <button aria-pressed="false" data-f="cen">Criança e Natureza</button>
+    </div>
+    <div id="examples"></div>
+  </div>
+</section>
+</div>
+
+<!-- ================= NUVEM ================= -->
+<div id="nuvem" role="tabpanel" aria-labelledby="tab-nuvem" hidden>
+<section>
+  <div class="wrap">
+    <h2>Palavras mais ditas</h2>
+    <p class="intro">O tamanho indica em quantos comentários a palavra aparece. Removemos artigos, preposições, @menções e emojis, e juntamos variações ("chorei" e "chorando" contam como "choro"). Expressões como "políticas públicas" e "Bolsa Família" contam como um termo só.</p>
+    <div class="filters" role="group" aria-label="Escolher canal da nuvem">
+      <button aria-pressed="true" data-c="all">Todos</button>
+      <button aria-pressed="false" data-c="alana">Instituto Alana</button>
+      <button aria-pressed="false" data-c="lunetas">Lunetas</button>
+      <button aria-pressed="false" data-c="cen">Criança e Natureza</button>
+    </div>
+    <div class="cloud v-all" id="cloud" role="img" aria-label="Nuvem de palavras"></div>
+    <p class="fine" id="cloud-note"></p>
+  </div>
+</section>
+</div>
+
+<!-- ================= NARRATIVA ================= -->
+<div id="narrativa" role="tabpanel" aria-labelledby="tab-narrativa" hidden>
+<section>
+  <div class="wrap">
+    <h2>A pergunta que a narrativa propõe</h2>
+    <p style="max-width:70ch;font-size:1.15rem;margin:0 0 18px"><b>Esse conteúdo está ajudando a comunidade a pensar sobre infância e políticas públicas, ou apenas criando uma arena de disputa?</b></p>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">Pensar sobre políticas públicas</span>
+        <p class="big">~64%</p>
+        <p>A maior parte da conversa é de emoção, relato e defesa da política pública. As pessoas reconheceram a própria vida no conteúdo, que é a função narrativa do primeiro movimento.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Arena de disputa</span>
+        <p class="big">~37%</p>
+        <p>Somadas, manifestação eleitoral (20%) e trocas sobre autoria e Bolsa Família (17%) ocupam pouco mais de um terço da conversa. Cerca de 8 comentários estão nos dois grupos, por isso a soma passa de 100%.</p>
+      </div>
+    </div>
+    <p class="fine">Estimativa a partir dos temas da aba Painel. "Pensar" agrupa emoção e elogio, relatos, defesa da política, natureza e ponderações, sem contar duas vezes o mesmo comentário. "Arena" agrupa manifestação eleitoral e trocas polarizadas.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>A lógica da narrativa e o caminho que a conversa fez</h2>
+    <p class="intro">A narrativa propõe partir da vida e chegar à eleição. Abaixo, quantos comentários tocaram cada etapa.</p>
+    <div class="flow">
+      <div><b>Vida</b><p class="n">33</p><small>relatos de vida concreta, em primeira pessoa</small></div>
+      <div class="gap"><b>Cuidado</b><p class="n">0</p><small>menções diretas a cuidado ou creche. A origem familiar aparece em 24 comentários, mas como trajetória, não como cuidado</small></div>
+      <div><b>Direitos</b><p class="n">17</p><small>comentários de defesa da política como direito e redução de desigualdade</small></div>
+      <div><b>Políticas públicas</b><p class="n">22</p><small>comentários citam "políticas públicas"; ProUni aparece em 16</small></div>
+      <div><b>Eleição</b><p class="n">52</p><small>manifestações eleitorais</small></div>
+    </div>
+    <p class="note" style="margin-top:18px">A conversa seguiu a lógica proposta, com uma lacuna no cuidado: as pessoas saltaram da própria trajetória direto para o programa que a tornou possível. Em paralelo, 27 comentários fizeram o caminho que a narrativa quer evitar, indo direto para candidato sem passar pela vida concreta.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Temas da vida concreta: o que a narrativa lista e o que o público trouxe</h2>
+    <p class="intro">Comentários que mencionam cada tema, por busca de palavras-chave revisada manualmente. Base: 262 comentários.</p>
+    <div class="bars" id="themes"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>As lentes do ecossistema</h2>
+    <p class="intro">O papel que a narrativa dá a cada canal e o que a audiência de cada um trouxe nos primeiros posts.</p>
+    <div class="lens">
+      <article class="alana">
+        <h3>Instituto Alana</h3>
+        <p class="said">Lente política e institucional: direitos, políticas públicas, proteção integral.</p>
+        <p class="said"><b>O que o público trouxe</b>Direitos garantidos na infância: vacinação, escola, SUS, merenda, transporte rural. A lente institucional abriu relatos de infância concreta.</p>
+      </article>
+      <article class="lunetas">
+        <h3>Lunetas</h3>
+        <p class="said">Lente da vida cotidiana: famílias, escola, saúde, cuidado, experiências concretas.</p>
+        <p class="said"><b>O que o público trouxe</b>Trajetórias familiares ("filha de pedreiro", "primeira da família") e ensino superior. A lente funcionou para gerar histórias, com foco na vida adulta.</p>
+      </article>
+      <article class="cen">
+        <h3>Criança e Natureza</h3>
+        <p class="said">Lente do território e do futuro: natureza, cidades, desigualdades.</p>
+        <p class="said"><b>O que o público trouxe</b>Natureza como aprendizado de respeito ao meio ambiente. Amostra pequena (4 comentários), sem relatos de território.</p>
+      </article>
+    </div>
+    <p class="fine">Criança e Consumo, lente das relações de consumo e do ambiente digital, entra na próxima leitura. Nenhum comentário dos três posts mencionou internet, telas ou apostas.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Os quatro movimentos da narrativa</h2>
+    <p class="intro">Onde os primeiros posts já tocam cada movimento, segundo o que a audiência comentou.</p>
+    <div class="moves">
+      <div class="move"><b>1. A vida que as pessoas já estão tentando sustentar</b><p style="margin:0">A função de reconhecimento apareceu: 33 relatos e 116 comentários de emoção. O reconhecimento veio pelo passado (o que existia), não pelo presente (como está a vida de quem cuida hoje).</p><span class="st part">Presente, pelo passado</span></div>
+      <div class="move"><b>2. O que parece individual também é público</b><p style="margin:0">Implícito nos relatos que atribuem a trajetória a uma política ("formada graças ao Sisu"). Não houve comentários sobre dificuldades atuais vividas como problema coletivo.</p><span class="st part">Implícito</span></div>
+      <div class="move"><b>3. Que políticas tornam essa vida possível?</b><p style="margin:0">É o movimento mais presente: ProUni, Sisu, FIES, Bolsa Família, SUS, vacinação e transporte escolar foram nomeados pelo público. É também onde nasceu a disputa sobre autoria.</p><span class="st ok">Forte</span></div>
+      <div class="move"><b>4. O que está em jogo para as próximas gerações?</b><p style="margin:0">Cerca de 6 comentários falam em mudança de gerações, em "não ser exceção" ou no orgulho das versões crianças de quem aparece no post. Outros 4 vêm de quem conta que cresceu sem essas políticas.</p><span class="st part">Sinais iniciais</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Sugestões para conteúdos futuros</h2>
+    <div class="cards three">
+      <div class="card">
+        <h3>Trazer o cuidado para a pergunta</h3>
+        <p>A conversa pulou a etapa do cuidado. Perguntas sobre quem cuidou, e com que apoio, podem ligar os relatos de origem familiar ao território "cuidar é uma questão pública".</p>
+      </div>
+      <div class="card">
+        <h3>Abrir os temas ausentes</h3>
+        <p>Creche, segurança, envelhecimento, ambiente digital e apostas não apareceram. São justamente os temas que a narrativa lista para mulheres, 70+ e jovens.</p>
+      </div>
+      <div class="card">
+        <h3>Do passado para o presente</h3>
+        <p>A pergunta sobre o que existia gerou relatos, mas quase nenhuma proposta (2 ponderações). A narrativa registra que perguntas abertas sobre o que precisa existir já geraram propostas concretas antes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+
+<footer class="page">
+  <div class="wrap">
+    <p><b>Nota metodológica.</b> Base de 265 comentários exportados das planilhas (Alana e Lunetas) e do print (CeN, total do post), com 262 válidos após a exclusão de 1 duplicata e 2 comentários vazios. Cada comentário recebeu um único tom (apoio, crítica ou neutro) em relação à legenda e à descrição do post. Emojis positivos contam como apoio, e comentários ambíguos ou só eleitorais como neutros. Os temas admitem sobreposição. A nuvem e os temas da narrativa contam em quantos comentários cada termo aparece.</p>
+    <p><b>Limitações.</b> Não há curtidas, alcance nem estrutura de respostas, então debate e troca são estimados pelo texto. Um relato longo do Alana está truncado na exportação. Horários em UTC. Criança e Consumo ainda não entrou na leitura.</p>
+    <p><b>Privacidade.</b> Este painel não traz nomes de usuário. A aba de exemplos reproduz trechos curtos de comentários públicos, sem autoria.</p>
+  </div>
+</footer>
+
+<script>
+  /* Grade: [canal, apoio, neutro, crítica] */
+  const groups=[["alana",28,4,0],["lunetas",170,34,22],["cen",4,0,0]];
+  const w=document.getElementById("waffle"); let k=0;
+  groups.forEach(([ch,a,n,c])=>{
+    [["",a],["n",n],["c",c]].forEach(([t,q])=>{
+      for(let j=0;j<q;j++){
+        const d=document.createElement("div");
+        d.className="cell "+ch+(t?" "+t:"");
+        d.style.animationDelay=(k++*3)+"ms";
+        w.appendChild(d);
+      }
+    });
+  });
+
+  /* Barras reutilizáveis */
+  function bars(el,rows,total,max){
+    rows.forEach(([name,n,tone,ex])=>{
+      const pct=(n/total*100).toFixed(1).replace(".",",");
+      const width=n/max*100, txt=`${n} · ${pct}%`, inside=width>=20;
+      const row=document.createElement("div"); row.className="bar-row"+(n===0?" zero":"");
+      row.innerHTML=`<div class="label"><b>${name}</b><small>${tone}</small></div>
+        <div class="track"><div class="fill" style="width:${Math.max(width,1.5)}%;${n===0?"display:none":""}">${inside?txt:""}</div>${inside?"":`<span class="out">${n===0?"0 · ausente":txt}</span>`}</div>
+        <p>${ex}</p>`;
+      el.appendChild(row);
+    });
+  }
+  bars(document.getElementById("clusters"),[
+    ["Emoção e elogio",116,"Tom predominante: apoio","Choro, arrepio, orgulho e emojis de aplauso e coração."],
+    ["Manifestação eleitoral",52,"Apoio ou fora do tema","Declarações de voto e hashtags de candidatura."],
+    ["Relato de vida",33,"Apoio","Filhos de motorista, pedreiro e metalúrgico que chegaram à universidade. Transporte rural, merenda e vacinação na infância."],
+    ["Autoria das políticas",26,"Polarizado","Quem criou ProUni, Bolsa Família, FIES e SUS, com datas, leis e governos anteriores contrapostos."],
+    ["Bolsa Família, impostos e trabalho",18,"Polarizado","Dependência e carga tributária contra o benefício como complemento que movimenta a economia."],
+    ["Defesa da política pública",17,"Apoio","Política pública como redução de desigualdade e garantia de direitos."],
+    ["Natureza na infância",3,"Apoio · amostra pequena","Escola com área verde e contato com a natureza como aprendizado."],
+    ["Ponderações e demandas",2,"Neutro · amostra pequena","Acesso ao ensino sem oportunidade de carreira depois; ausência de políticas para a classe média."]
+  ],262,116);
+  bars(document.getElementById("themes"),[
+    ["Ensino superior",29,"Lunetas 28 · Alana 1","ProUni, Sisu, FIES, faculdade, mestrado. Não está na lista da narrativa, mas foi o tema dominante."],
+    ["Mãe, pai e origem familiar",24,"Lunetas 22 · Alana 2","Trajetórias de \"filha de\" e \"filho de\" trabalhadores e de quem foi a primeira da família a se formar."],
+    ["Trabalho e emprego",16,"Lunetas 16","Carreira depois da formação e o debate sobre quem trabalha."],
+    ["Renda (Bolsa Família, auxílio)",14,"Lunetas 12 · Alana 2","Benefício como complemento na infância e como tema de disputa."],
+    ["Escola e educação básica",13,"Lunetas 8 · Alana 5","Merenda, livro didático, material escolar, transporte rural, escola pública."],
+    ["Saúde",4,"Alana 3 · Lunetas 1","Vacinação, posto de saúde e SUS."],
+    ["Natureza e território",3,"Alana 2 · CeN 1","Escola com natureza e contato com o meio ambiente."],
+    ["Moradia",1,"Lunetas 1","Um relato cita o Minha Casa Minha Vida."],
+    ["Creche e cuidado",0,"Ausente","Nenhuma menção direta."],
+    ["Segurança",0,"Ausente","Nenhuma menção ao tema."],
+    ["Envelhecimento e avós",0,"Ausente","Nenhuma menção direta."],
+    ["Ambiente digital e apostas",0,"Ausente","Nenhuma menção a internet, telas ou bets."]
+  ],262,29);
+
+  /* Exemplos: [tema, descrição, [[canal, tom, trecho], ...]] */
+  const ex=[
+    ["Relato de vida","Respostas diretas à pergunta da legenda.",[
+      ["lunetas","Apoio","Filha de motorista que estudou até a 5 série e formada graças ao Sisu."],
+      ["lunetas","Apoio","Fui prouni, fiz mestrado e doutorado. Sou professora e meus melhores alunos sao bolsistas!"],
+      ["lunetas","Apoio","Sou filha de serralheiro e servente de escola e fui a primeira \"Dra\" da família!"],
+      ["alana","Apoio","Transporte na zona rural para ir à escola, materiais escolares e alimentação comprados com bolsa família…"],
+      ["alana","Apoio","Escola de educação infantil pública de qualidade com muita natureza! Como é bom lembrar da minha escolinha"],
+      ["alana","Apoio","Livro didático a gente recebia o que alguém tinha usado no ano anterior…"]
+    ]],
+    ["Natureza na infância","Amostra pequena: um único exemplo.",[
+      ["cen","Apoio","Muita harmonia com a natureza, a criança aprende o respeito pelo meio ambiente."]
+    ]],
+    ["Defesa da política pública","Valorização da política como direito e redução de desigualdade.",[
+      ["lunetas","Apoio","Políticas públicas cumprindo o papel de reduzir iniquidades, garantir direitos…"],
+      ["alana","Apoio","políticas públicas transformam vidas"],
+      ["lunetas","Apoio","Sonhar, mas mais do que isso, a oportunidade de realizar. É possível!"]
+    ]],
+    ["Emoção e elogio","O tipo de comentário mais frequente.",[
+      ["lunetas","Apoio","Eu chorando com o pão na boca."],
+      ["cen","Apoio","Que post necessário."],
+      ["alana","Apoio","Obrigada pelo post"]
+    ]],
+    ["Manifestação eleitoral","Declarações de voto. Quando o comentário só cita candidato, sem reagir ao conteúdo, ele conta como neutro em relação ao post e entra na contagem de menções políticas.",[
+      ["lunetas","Neutro (só eleitoral)","Só temos um candidato que olha pelo povo"],
+      ["lunetas","Apoio","Não é nada difícil escolher no dia 4/10"],
+      ["alana","Neutro (só eleitoral)","Lula no primeiro turno"]
+    ]],
+    ["Autoria das políticas","Os dois lados da disputa, nos próprios termos.",[
+      ["lunetas","Crítica","Lembrando que esses programas foram criados antes do governo do PT…"],
+      ["lunetas","Apoio","prouni foi criado em 2004, no primeiro governo Lula"],
+      ["lunetas","Crítica","é ótimo melhorar algo, como já disse, mas melhorar não é criar."]
+    ]],
+    ["Bolsa Família, impostos e trabalho","Os dois lados da troca, sem as falas ofensivas.",[
+      ["lunetas","Crítica","…virou apoio pras pessoas n buscarem trabalho e dependerem dele pro resto da vida"],
+      ["lunetas","Apoio","Tudo que a classe trabalhadora recebe… volta pra roda da economia e faz o país crescer."],
+      ["lunetas","Neutro","O bolsa família não vai ser extinto, nem que o governo seja de direita."]
+    ]],
+    ["Ponderações e demandas","Amostra pequena.",[
+      ["lunetas","Crítica","Uma bolsa pode abrir a porta para a formação, mas não deveria ser confundida com a garantia de um futuro profissional."],
+      ["lunetas","Neutro","…gostaria de saber qual político fará o mesmo pela classe média brasileira."]
+    ]]
+  ];
+  const names={alana:"Instituto Alana",lunetas:"Lunetas",cen:"Criança e Natureza"};
+  const exBox=document.getElementById("examples");
+  ex.forEach(([t,d,items])=>{
+    const g=document.createElement("div"); g.className="ex-group";
+    g.innerHTML=`<h3>${t}</h3><p>${d}</p><div class="quotes">${items.map(([c,tone,q])=>
+      `<blockquote class="${c}" data-ch="${c}"><p>“${q}”</p><span class="src">${names[c]} · ${tone}</span></blockquote>`).join("")}</div>`;
+    exBox.appendChild(g);
+  });
+  document.querySelectorAll('#exemplos .filters button').forEach(b=>b.addEventListener("click",()=>{
+    document.querySelectorAll('#exemplos .filters button').forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+    const f=b.dataset.f;
+    document.querySelectorAll(".ex-group").forEach(g=>{
+      let vis=0;
+      g.querySelectorAll("blockquote").forEach(q=>{const on=f==="all"||q.dataset.ch===f;q.hidden=!on;if(on)vis++;});
+      g.classList.toggle("empty",vis===0);
+    });
+  }));
+
+  /* Nuvem: [palavra, nº de comentários] calculado sobre a base válida */
+  const clouds={
+    all:[["lula",37],["13",23],["políticas públicas",22],["emoção",17],["governo",17],["programas",16],["prouni",16],["histórias",11],["filha/filho",11],["vida",11],["educação",10],["escola",10],["bolsa família",10],["orgulho",9],["trabalho",9],["primeira da família",9],["família",9],["pública",8],["choro",7],["sociais",6],["vídeos",6],["criou",6],["universidade",5],["fies",5],["efeito",5],["classe",5],["auxílio",5],["brasil",5],["país",4],["estudo",4],["trabalhadores",4],["direita",4],["parabéns",4],["acesso",4],["mestrado",4],["faculdade",4],["formada",3],["povo",3],["cria",3],["fruto",3],["renda",3],["sonhos",3],["realizar",3],["impostos",3],["economia",3],["vacinação",3],["natureza",3]],
+    lunetas:[["lula",35],["13",22],["políticas públicas",19],["emoção",17],["governo",17],["programas",16],["prouni",16],["histórias",11],["filha/filho",11],["vida",10],["orgulho",9],["educação",9],["bolsa família",9],["trabalho",9],["primeira da família",8],["família",8],["choro",7],["pública",7],["escola",6],["sociais",6],["vídeos",6],["criou",6],["universidade",5],["fies",5],["efeito",5],["classe",5],["auxílio",5],["brasil",5],["estudo",4],["trabalhadores",4],["direita",4],["mestrado",4],["parabéns",3],["país",3],["faculdade",3],["formada",3],["povo",3],["cria",3],["fruto",3],["renda",3],["sonhos",3],["realizar",3],["impostos",3],["economia",3]],
+    alana:[["escola",4],["políticas públicas",3],["vacinação",3],["transporte",2],["rural",2],["natureza",2],["escolar",2],["acesso",2],["lula",2],["merenda",1],["saúde",1],["sus",1],["livros",1],["professora",1],["infância",1],["faculdade",1],["família",1],["soberania",1],["13",1]],
+    cen:[["natureza",1],["criança",1],["respeito",1],["meio ambiente",1],["harmonia",1],["aprende",1],["necessário",1]]
+  };
+  const alanaWords=new Set(["vacinação","natureza"]);
+  const notes={
+    all:"\"Lula\" e \"13\" lideram porque refletem o volume de manifestações eleitorais, concentradas no post com mais comentários. Palavras com destaque amarelo vêm sobretudo do Instituto Alana. Mínimo de 3 comentários por palavra.",
+    lunetas:"Mínimo de 3 comentários por palavra.",
+    alana:"Base pequena (32 comentários): cada palavra aparece em até 4 comentários. Boa parte dos termos vem de um único relato longo sobre a infância nos anos 70.",
+    cen:"Base de 4 comentários: todas as palavras aparecem uma vez. Leitura apenas ilustrativa."
+  };
+  const cloudEl=document.getElementById("cloud"), noteEl=document.getElementById("cloud-note");
+  function drawCloud(key){
+    const data=clouds[key], mx=Math.max(...data.map(d=>d[1])), mn=Math.min(...data.map(d=>d[1]));
+    const order=[...data].sort((a,b)=>a[0].localeCompare(b[0],"pt"));
+    cloudEl.className="cloud v-"+key;
+    cloudEl.innerHTML=order.map(([wd,n])=>{
+      const t=mx===mn?.6:(Math.sqrt(n)-Math.sqrt(mn))/(Math.sqrt(mx)-Math.sqrt(mn));
+      const size=(0.95+t*2.9).toFixed(2);
+      let cls="";
+      if(key==="all"){ if(alanaWords.has(wd)) cls="d-alana"; }
+      return `<span class="${cls}" style="font-size:${size}rem" title="${wd}: ${n} comentário${n>1?"s":""}">${wd}<small>${n}</small></span>`;
+    }).join("");
+    cloudEl.setAttribute("aria-label","Nuvem de palavras: "+data.map(d=>d[0]+" "+d[1]).join(", "));
+    noteEl.textContent=notes[key];
+  }
+  drawCloud("all");
+  document.querySelectorAll('#nuvem .filters button').forEach(b=>b.addEventListener("click",()=>{
+    document.querySelectorAll('#nuvem .filters button').forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+    drawCloud(b.dataset.c);
+  }));
+
+  /* Abas */
+  const tabs=[...document.querySelectorAll('[role="tab"]')];
+  function show(t){
+    tabs.forEach(x=>{const on=x===t;x.setAttribute("aria-selected",String(on));x.tabIndex=on?0:-1;
+      document.getElementById(x.getAttribute("aria-controls")).hidden=!on;});
+    history.replaceState(null,"","#"+t.getAttribute("aria-controls"));
+    window.scrollTo({top:document.querySelector("nav.tabbar").offsetTop,behavior:"auto"});
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener("click",()=>show(t));
+    t.addEventListener("keydown",e=>{
+      if(e.key==="ArrowRight"||e.key==="ArrowLeft"){
+        const n=tabs[(i+(e.key==="ArrowRight"?1:-1)+tabs.length)%tabs.length];show(n);n.focus();}
+    });
+  });
+  const start=tabs.find(t=>"#"+t.getAttribute("aria-controls")===location.hash);
+  if(start) show(start);
+</script>
+</body>
+</html>
