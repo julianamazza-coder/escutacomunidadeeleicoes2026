@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Escuta da comunidade: o que a audiência comentou nos primeiros posts da campanha da reta final do primeiro turno</title>
+<title>Escuta da comunidade: o que a audiência comentou nos posts da campanha da reta final do primeiro turno</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* Tokens de marca: ajuste os hex para os oficiais de cada canal */
   :root{
-    --alana:#FFD400; --lunetas:#EE6FA6; --lunetas-2:#2747A8; --cen:#2F9A4E;
+    --alana:#FFD400; --lunetas:#EE6FA6; --lunetas-2:#2747A8; --cen:#2F9A4E; --cec:#D62828;
     --ink:#000; --paper:#fff; --muted:#5A5A5A; --line:#E3E3E3; --soft:#F2F2F2;
     --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
     --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
@@ -21,7 +21,7 @@
   body{font-family:var(--body);font-size:17px;line-height:1.55}
   :focus-visible{outline:3px solid var(--lunetas-2);outline-offset:3px}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-  .alana{--c:var(--alana)} .lunetas{--c:var(--lunetas)} .cen{--c:var(--cen)}
+  .alana{--c:var(--alana)} .lunetas{--c:var(--lunetas)} .cen{--c:var(--cen)} .cec{--c:var(--cec)}
 
   header.hero{background:var(--alana);padding:48px 0 36px}
   .kicker{font-family:var(--display);font-weight:800;font-size:1.25rem;margin:0 0 8px}
@@ -73,6 +73,19 @@
   .t-c{background:repeating-linear-gradient(45deg,#000 0 2px,#fff 2px 8px)}
   .tone-key{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:.95rem}
   .tone-key i{display:inline-block;width:18px;height:18px;vertical-align:-4px;margin-right:8px;border:1px solid #000}
+  .tone-def{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;margin-top:14px;font-size:.92rem}
+  .tone-def div{display:grid;grid-template-columns:24px 1fr;gap:8px;align-items:start}
+  .tone-def i{display:inline-block;width:18px;height:18px;border:1px solid #000;margin-top:3px}
+  .tone-def b{display:block}
+  .tone-def span{color:var(--muted)}
+  .t-f{background:repeating-linear-gradient(45deg,#000 0 1px,#fff 1px 5px)}
+  .t-e{background:#7A7A7A;color:#fff}
+  .t-u{background:#C8C8C8}
+  .t-o{background:#fff}
+  .mini .e{background:var(--c);opacity:.6}
+  .mini .r{background:var(--c);opacity:.22}
+  .sw.e{opacity:.6} .sw.r{opacity:.22}
+  @media (max-width:860px){.tone-def{grid-template-columns:1fr}}
 
   .bars{display:grid;gap:14px}
   .bar-row{display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:16px;align-items:start}
@@ -84,12 +97,12 @@
   .bar-row p{grid-column:2;margin:6px 0 0;font-size:.93rem;color:var(--muted)}
   .zero .label b{color:var(--muted)}
 
-  .channels{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .channels{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .ch{border-top:10px solid var(--c);padding:18px 0 0}
   .ch .fmt{font-size:.9rem;color:var(--muted);margin:0 0 12px}
   .ch dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:.95rem}
   .ch dt{font-weight:700} .ch dd{margin:0}
-  .ch.lunetas h3{color:var(--lunetas-2)} .ch.cen h3{color:var(--cen)}
+  .ch.lunetas h3{color:var(--lunetas-2)} .ch.cen h3{color:var(--cen)} .ch.cec h3{color:var(--cec)}
   .mini{display:flex;height:18px;margin:4px 0 8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
   .mini span{height:100%}
   .mini .a{background:var(--c)} .mini .n{background:var(--c);opacity:.35}
@@ -120,6 +133,7 @@
   .ex-group{margin-bottom:34px}
   .ex-group > p{color:var(--muted);font-size:.93rem;margin:0 0 14px;max-width:70ch}
   .quotes{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  blockquote.cec{border-left-color:var(--cec)}
   blockquote{margin:0;padding:14px 16px 12px;border-left:8px solid var(--c);background:var(--soft)}
   blockquote p{margin:0 0 10px;font-size:1.02rem}
   blockquote .src{color:var(--muted);font-size:.85rem}
@@ -172,6 +186,28 @@
     .cell{animation:pop .4s ease-out both}
     @keyframes pop{from{transform:scale(.4);opacity:0}}
   }
+  .waves{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .wave{border:2px solid var(--ink);padding:18px}
+  .wave h3{margin-bottom:2px}
+  .wave .sub{color:var(--muted);font-size:.9rem;margin:0 0 14px}
+  .metric{display:grid;grid-template-columns:150px 1fr 56px;gap:10px;align-items:center;margin:8px 0;font-size:.93rem}
+  .metric .tr{background:var(--soft);height:16px}
+  .metric .fl{height:100%;background:var(--ink)}
+  .metric b{text-align:right}
+  .postlist{display:grid;gap:14px;margin-top:6px}
+  .prow{border-top:1px solid var(--line);padding-top:12px}
+  .prow .pt{font-weight:700;font-size:.95rem;margin:0}
+  .prow .pm{font-size:.85rem;color:var(--muted);margin:2px 0 6px}
+  .prow .pd{font-size:.88rem;margin:6px 0 0}
+  .quality{border-left:6px solid var(--alana);background:var(--soft);padding:12px 16px;font-size:.92rem;max-width:80ch;margin-top:18px}
+  .quality ul{margin:6px 0 0;padding-left:18px}
+  .toplist{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .toplist li{display:grid;grid-template-columns:70px 1fr 150px;gap:14px;align-items:start;padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+  .toplist .lk{font-family:var(--display);font-weight:800;font-size:1.3rem}
+  .toplist .cp{font-size:.82rem;color:var(--muted)}
+  .camp{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 8px;border-radius:4px;border:1.5px solid var(--ink)}
+  .camp.l{background:#fff} .camp.o{background:#E8E8E8} .camp.n{background:#fff;border-style:dashed}
+  @media (max-width:860px){.waves{grid-template-columns:1fr}.toplist li{grid-template-columns:56px 1fr}.toplist .cp{grid-column:2}.metric{grid-template-columns:110px 1fr 48px}}
 </style>
 </head>
 <body>
@@ -179,12 +215,12 @@
 <header class="hero">
   <div class="wrap">
     <p class="kicker">Escuta da comunidade</p>
-    <h1>O que a audiência comentou nos primeiros posts da campanha da reta final do primeiro turno</h1>
-    <p class="lede">Leitura conjunta dos comentários dos três primeiros posts da Rede Alana na campanha. Os canais são lidos lado a lado como ponto de partida da mesma narrativa.</p>
+    <h1>O que a audiência comentou nos posts da campanha da reta final do primeiro turno</h1>
+    <p class="lede">Leitura conjunta dos comentários de 11 posts da Rede Alana na reta final do primeiro turno. Os canais e os posts são lidos lado a lado, como etapas da mesma narrativa.</p>
     <div class="meta">
-      <span>Instituto Alana · Lunetas · Criança e Natureza</span>
-      <span>29/09 a 01/10/2026</span>
-      <span>Criança e Consumo entra na próxima leitura</span>
+      <span>Instituto Alana · Lunetas · Criança e Natureza · Criança e Consumo</span>
+      <span>11 posts publicados até 03/10/2026</span>
+      <span>Comentários coletados após o primeiro turno</span>
     </div>
   </div>
 </header>
@@ -207,17 +243,18 @@
 <section>
   <div class="wrap">
     <div class="waffle-head">
-      <h2>Cada quadrado é um comentário</h2>
-      <p class="intro" style="margin:0">262 comentários válidos, agrupados por canal e por tom.</p>
+      <h2>Cada quadrado são 5 comentários</h2>
+      <p class="intro" style="margin:0">2.329 comentários válidos, agrupados por canal e por posição em relação ao conteúdo do post.</p>
     </div>
-    <div class="waffle" id="waffle" role="img" aria-label="Grade com 262 comentários. Instituto Alana: 32, sendo 28 de apoio e 4 neutros. Lunetas: 226, sendo 170 de apoio, 34 neutros e 22 críticos. Criança e Natureza: 4 de apoio."></div>
+    <div class="waffle" id="waffle" role="img" aria-label="Grade com 2.329 comentários. Instituto Alana: 1.037, sendo 357 de apoio, 30 críticos e 650 sem posição sobre o post. Lunetas: 1.285, sendo 467 de apoio, 76 críticos e 742 sem posição sobre o post. Criança e Natureza: 6 de apoio. Criança e Consumo: 1 de apoio."></div>
     <div class="legend">
       <span><i class="sw alana"></i>Instituto Alana</span>
       <span><i class="sw lunetas"></i>Lunetas</span>
-      <span><i class="sw cen"></i>Criança e Natureza</span>
-      <span><i class="sw grey"></i>Cor cheia: apoio</span>
-      <span><i class="sw grey n"></i>Cor clara: neutro ou só eleitoral</span>
-      <span><i class="sw grey c"></i>Listrado: crítica (as 22 críticas são do Lunetas)</span>
+      <span><i class="sw cen"></i>Criança e Natureza (1 quadrado = 6 comentários)</span>
+      <span><i class="sw cec"></i>Criança e Consumo (1 quadrado = 1 comentário)</span>
+      <span><i class="sw grey"></i>Cor cheia: apoio ao conteúdo do post</span>
+      <span><i class="sw grey c"></i>Listrado: crítica, ao conteúdo ou à forma do post</span>
+      <span><i class="sw grey n"></i>Cor clara: sem posição sobre o post (só declaração de voto, conversa entre usuários, dúvidas e outros)</span>
     </div>
   </div>
 </section>
@@ -226,184 +263,297 @@
   <div class="wrap">
     <h2>Panorama geral</h2>
     <div class="keys">
-      <div><b>262</b><small>comentários válidos</small></div>
-      <div><b>225</b><small>perfis únicos (2 perfis comentaram em dois canais)</small></div>
-      <div><b>3</b><small>posts, um por canal</small></div>
-      <div><b>~3 dias</b><small>de 29/09 a 01/10</small></div>
+      <div><b>2.329</b><small>comentários válidos analisados</small></div>
+      <div><b>2.625</b><small>comentários informados no Instagram (89% analisados)</small></div>
+      <div><b>11</b><small>posts: 3 do Alana, 5 do Lunetas, 2 de CeN e 1 de CeC</small></div>
+      <div><b>725</b><small>respostas a outros comentários</small></div>
     </div>
-    <p class="fine">Excluímos 3 registros (1 duplicata e 2 comentários vazios). Não houve comentários das marcas nem respostas automáticas.</p>
-    <h3 style="margin-top:32px">Distribuição de tom</h3>
-    <div class="tone-bar" role="img" aria-label="Apoio 77,1%, neutro 14,5%, crítica 8,4%">
-      <span class="t-a" style="width:77.1%">202 · 77,1%</span>
-      <span class="t-n" style="width:14.5%">38 · 14,5%</span>
-      <span class="t-c" style="width:8.4%"></span>
+    <p class="fine">Excluímos 124 duplicatas (textos colados várias vezes pelos usuários e trechos que aparecem repetidos na cópia) e 36 registros sem texto. Cinco comentários aparecem como ocultos pelo Instagram e não entram na base.</p>
+    <h3 style="margin-top:32px">Posição em relação ao conteúdo do post</h3>
+    <p class="intro small" style="margin-bottom:8px">Cada comentário entra em uma única categoria, definida pela reação ao que o post diz (legenda e conteúdo), e não pelo voto declarado. Preferência eleitoral é contada à parte, na seção de candidaturas.</p>
+    <div class="tone-bar" role="img" aria-label="Apoio 35,7%, crítica ao conteúdo 4,1%, crítica à forma 0,5%, só eleitoral 31,4%, conversa entre usuários 25,5%, dúvidas e outros 2,8%">
+      <span class="t-a" style="width:35.7%">36%</span>
+      <span class="t-c" style="width:4.1%"></span>
+      <span class="t-f" style="width:0.5%"></span>
+      <span class="t-e" style="width:31.4%">31%</span>
+      <span class="t-u" style="width:25.5%">26%</span>
+      <span class="t-o" style="width:2.8%"></span>
     </div>
-    <div class="tone-key">
-      <span><i class="t-a"></i><b>Apoio</b> 202 (77,1%)</span>
-      <span><i class="t-n"></i><b>Neutro, dúvida ou só eleitoral</b> 38 (14,5%)</span>
-      <span><i class="t-c"></i><b>Crítica</b> 22 (8,4%)</span>
+    <div class="tone-def">
+      <div><i class="t-a"></i><p style="margin:0"><b>Apoio ao conteúdo · 831 (35,7%)</b><span>Concorda com o post, se emociona, conta uma história relacionada ou defende a pauta.</span></p></div>
+      <div><i class="t-c"></i><p style="margin:0"><b>Crítica ao conteúdo · 95 (4,1%)</b><span>Discorda da mensagem do post, contesta seus argumentos ou rejeita o perfil por causa dele.</span></p></div>
+      <div><i class="t-f"></i><p style="margin:0"><b>Crítica à forma, com apoio à pauta · 11 (0,5%)</b><span>Concorda com a causa, mas acha o post insuficiente, por exemplo cobrando posicionamento mais claro.</span></p></div>
+      <div><i class="t-e"></i><p style="margin:0"><b>Só eleitoral · 732 (31,4%)</b><span>Comentário principal que apenas declara voto ou rejeita um candidato, sem reagir ao conteúdo.</span></p></div>
+      <div><i class="t-u"></i><p style="margin:0"><b>Conversa entre usuários · 594 (25,5%)</b><span>Resposta a outra pessoa, discutindo com ela e não com o post. Inclui provocações e ataques.</span></p></div>
+      <div><i class="t-o"></i><p style="margin:0"><b>Dúvidas e outros · 66 (2,8%)</b><span>Perguntas práticas, marcações, divulgação de outros perfis e comentários sem tema identificável.</span></p></div>
     </div>
-    <p class="note" style="margin-top:18px">Clima geral: emoção e reconhecimento predominam, puxados por relatos de quem chegou mais longe que os pais por meio de políticas públicas. A crítica é pequena e concentrada: um único perfil escreveu 12 dos 22 comentários críticos.</p>
+    <p class="note" style="margin-top:18px">Clima geral: a conversa começou emocional e centrada em relatos de vida e terminou dominada por declarações de voto e discussões entre usuários. A crítica ao conteúdo dos posts é pequena (4,1%), e a maior parte vem do campo de oposição.</p>
+    <div class="quality">
+      <b>Qualidade dos dados</b>
+      <ul>
+        <li>Os comentários foram coletados de duas formas: por plataformas gratuitas de raspagem de comentários e manualmente, abrindo cada publicação e copiando os comentários disponíveis. Por limitações técnicas dessas ferramentas e do próprio Instagram, não foi possível coletar a totalidade: analisamos 2.329 dos 2.625 comentários informados (89%). Pelo mesmo motivo, curtidas, respostas e nomes de usuário não vieram para todos os posts.</li>
+        <li>A classificação foi feita por regras de palavras-chave, revisadas manualmente numa amostra de cerca de 200 comentários, em todos os comentários longos do campo de oposição e em todos os comentários sem posição que não eram respostas nem declarações de voto. O lado político foi identificado corretamente em cerca de 85% a 90% dos casos, com erros concentrados em respostas longas e irônicas.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Como a conversa mudou ao longo da campanha</h2>
+    <p class="intro">Os posts com data conhecida se dividem em dois momentos (o card "A vontade de brincar ao ar livre" de CeN e o post de CeC ficam de fora desta comparação). "Menção eleitoral" inclui qualquer comentário com declaração de voto ou campo político, inclusive respostas. No primeiro, a pergunta era sobre a infância vivida. No segundo, o foco era o voto. A mudança aparece nos dois canais, então reflete o tipo de chamada, não o canal.</p>
+    <div class="waves">
+      <div class="wave">
+        <h3>Primeiro momento · 29 e 30/09</h3>
+        <p class="sub">"O que existia na sua infância porque uma política pública garantiu?" · 3 posts · 444 comentários</p>
+        <div id="w1"></div>
+      </div>
+      <div class="wave">
+        <h3>Segundo momento · 01 a 03/10</h3>
+        <p class="sub">Chamadas ao voto pensando nas crianças · 6 posts · 1.883 comentários</p>
+        <div id="w2"></div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:18px">Quando a pergunta tratava da vida concreta, as pessoas contaram a própria história. Quando a chamada era o voto, responderam com candidato: as menções eleitorais mais que dobraram, a conversa entre usuários cresceu e o campo de oposição, quase ausente no primeiro momento, chegou a cerca de 15% dos comentários.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <h2>Do que a conversa tratou</h2>
-    <p class="intro small">Um comentário pode aparecer em mais de um tema. Percentuais sobre os 262 comentários válidos. Os exemplos desta seção são paráfrases; trechos reais estão na aba de exemplos.</p>
+    <p class="intro small">Um comentário pode aparecer em mais de um tema. Percentuais sobre os 2.329 comentários válidos. Os exemplos desta seção são paráfrases; trechos reais estão na aba de exemplos.</p>
     <div class="bars" id="clusters"></div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>O perfil da conversa em cada canal</h2>
-    <p class="intro">Os três posts tiveram formatos, volumes e momentos diferentes, então as diferenças abaixo descrevem o tipo de conversa que cada formato abriu.</p>
+    <h2>O perfil da conversa em cada post</h2>
+    <p class="intro">Os posts tiveram formatos, chamadas e momentos diferentes, então as diferenças abaixo descrevem o tipo de conversa que cada um abriu. Nas barras, "crítica" junta crítica ao conteúdo e à forma, e "conversa e outros" junta respostas entre usuários, dúvidas e outros. "Menções eleitorais" conta qualquer comentário com declaração de voto ou campo político, inclusive respostas, por isso é maior que a fatia "só eleitoral".</p>
     <div class="channels">
       <article class="ch alana">
         <h3>Instituto Alana</h3>
-        <p class="fmt">Reels, 30/09. Repost: os comentários do post original, arquivado, não estão na base.</p>
-        <div class="mini" role="img" aria-label="87,5% apoio, 12,5% neutro"><span class="a" style="width:87.5%"></span><span class="n" style="width:12.5%"></span></div>
-        <div class="mini-key"><span><i class="sw alana"></i>Apoio 87,5%</span><span><i class="sw alana n"></i>Neutro 12,5%</span></div>
-        <dl>
-          <dt>32</dt><dd>comentários (12% da base)</dd>
-          <dt>Tom</dt><dd>28 apoio, 4 neutros, nenhuma crítica</dd>
-          <dt>Destaque</dt><dd>Relatos da infância concreta: merenda, transporte escolar rural, vacinação, escola infantil com natureza</dd>
-        </dl>
+        <p class="fmt">3 posts · 1.037 comentários analisados</p>
+        <div class="postlist" id="pl-alana"></div>
       </article>
       <article class="ch lunetas">
         <h3>Lunetas</h3>
-        <p class="fmt">Carrossel com curadoria de vídeos, 29/09. Primeiro a ir ao ar e com mais tempo de exposição.</p>
-        <div class="mini" role="img" aria-label="75,2% apoio, 15% neutro, 9,7% crítica"><span class="a" style="width:75.2%"></span><span class="n" style="width:15%"></span><span class="c" style="width:9.8%"></span></div>
-        <div class="mini-key"><span><i class="sw lunetas"></i>Apoio 75,2%</span><span><i class="sw lunetas n"></i>Neutro 15,0%</span><span><i class="sw lunetas c"></i>Crítica 9,7%</span></div>
-        <dl>
-          <dt>226</dt><dd>comentários (86% da base)</dd>
-          <dt>Tom</dt><dd>170 apoio, 34 neutros, 22 críticas</dd>
-          <dt>Destaque</dt><dd>Relatos de acesso à universidade. Ao nomear programas federais, o post abriu espaço para conversa sobre autoria e sobre o Bolsa Família</dd>
-        </dl>
+        <p class="fmt">5 posts · 1.285 comentários analisados</p>
+        <div class="postlist" id="pl-lunetas"></div>
       </article>
       <article class="ch cen">
         <h3>Criança e Natureza</h3>
-        <p class="fmt">Carrossel, 30/09.</p>
-        <div class="mini" role="img" aria-label="100% apoio"><span class="a" style="width:100%"></span></div>
-        <div class="mini-key"><span><i class="sw cen"></i>Apoio 100%</span></div>
-        <dl>
-          <dt>4</dt><dd>comentários (2% da base)</dd>
-          <dt>Tom</dt><dd>4 apoio</dd>
-          <dt>Destaque</dt><dd>Valorização do contato com a natureza como aprendizado de respeito ao meio ambiente</dd>
-        </dl>
+        <p class="fmt">2 posts · 6 comentários</p>
+        <div class="postlist" id="pl-cen"></div>
+      </article>
+      <article class="ch cec">
+        <h3>Criança e Consumo</h3>
+        <p class="fmt">1 post · 1 comentário</p>
+        <div class="postlist" id="pl-cec"></div>
       </article>
     </div>
-    <p class="note" style="margin-top:22px">Lido em conjunto, o retrato é complementar. Os três posts fizeram a mesma pergunta e receberam respostas em escalas de vida diferentes: a infância vivida (Alana e CeN) e a trajetória adulta (Lunetas). Com 4 e 32 comentários, CeN e Alana são amostras pequenas para conclusões isoladas.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Menções a políticos, partidos e governos</h2>
-    <p class="intro">Contagem à parte do tom. Comentários que só declaram voto ou citam candidato, sem reagir ao conteúdo, foram classificados como neutros em relação ao post. São 27 casos.</p>
+    <h2>Menções a candidaturas</h2>
+    <p class="intro">Contagem à parte da posição sobre o post. Inclui menção ao nome, ao partido ou ao número da candidatura. Um comentário pode citar as duas candidaturas.</p>
     <div class="scroll">
     <table>
       <thead><tr><th>Citado</th><th>A favor</th><th>Contra</th><th>Teor</th></tr></thead>
       <tbody>
-        <tr><td>Lula, PT ou número 13</td><td class="num">~45</td><td class="num">~8</td><td>A favor: declarações de voto e agradecimento por políticas. Contra: uso dos programas como vitrine eleitoral e endividamento do governo.</td></tr>
-        <tr><td>"Direita" ou "extrema direita" (genérico)</td><td class="num">—</td><td class="num">~5</td><td>Associação da direita à rejeição de programas sociais.</td></tr>
-        <tr><td>"Esquerda" (genérico)</td><td class="num">—</td><td class="num">1</td><td>Rótulo usado como desqualificação em réplica.</td></tr>
-        <tr><td>FHC e Sarney</td><td class="num">~4</td><td class="num">—</td><td>Citados como criadores de programas anteriores. Amostra pequena, quase toda de um único perfil.</td></tr>
-        <tr><td>Bolsonaro</td><td class="num">1</td><td class="num">1</td><td>Citado na disputa sobre o ProUni. Amostra pequena.</td></tr>
+        <tr><td>Lula, PT ou número 13</td><td class="num">590</td><td class="num">133</td><td>A favor: declarações de voto, muitas vezes ligadas às crianças, à educação e às políticas públicas. Contra: corrupção, "20 anos de PT" e rejeição ao governo atual.</td></tr>
+        <tr><td>Flávio Bolsonaro, família Bolsonaro ou número 22</td><td class="num">187</td><td class="num">183</td><td>A favor: declarações de voto ligadas a segurança, corrupção e valores. Contra: falas atribuídas ao candidato sobre meninas, milícia e propostas para o ECA e o ensino público.</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="intro" style="margin-top:14px">Cerca de 20% dos comentários (52) têm manifestação eleitoral. Quase todos estão no post do Lunetas, que também concentra o volume. Um perfil publicou 5 comentários seguidos em cerca de 30 segundos, 4 deles eleitorais.</p>
+    <div class="cards" style="margin-top:22px">
+      <div class="card">
+        <span class="tag">Volume de comentários</span>
+        <p class="big">729 × 279</p>
+        <p>Comentários do campo Lula (a favor de Lula ou contra Flávio) e do campo de oposição (a favor de Flávio ou contra Lula), incluindo respostas. Outros 27 misturam os dois lados.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Curtidas por comentário</span>
+        <p class="big">5,2 × 15,9</p>
+        <p>Média de curtidas por comentário principal de cada campo, nos posts em que a coleta trouxe curtidas. Base: 412 comentários do campo Lula (114 com ao menos uma curtida) e 173 do campo de oposição (105 com ao menos uma curtida).</p>
+      </div>
+    </div>
+    <div class="quality">
+      <b>Como lemos as curtidas</b>
+      <ul>
+        <li>A coleta trouxe curtidas em 8 dos 11 posts, o que cobre 1.739 dos 2.329 comentários. Ficaram sem essa informação o Reels do Alana de 02/10 (588 comentários), o card "A vontade de brincar ao ar livre" de CeN e o post de CeC.</li>
+        <li>Desses 1.739 comentários, 684 têm pelo menos uma curtida, somando 8.094 curtidas. Os demais aparecem com zero.</li>
+        <li>A média é puxada por poucos comentários muito curtidos. A mediana é 0 no campo Lula e 1 no campo de oposição: o campo Lula tem muitas declarações curtas de voto sem curtidas, e o de oposição tem menos comentários, com mais curtidas cada.</li>
+        <li>Curtidas mostram o alcance de um comentário dentro do post. Não é possível saber quem curtiu nem se são seguidores dos perfis.</li>
+      </ul>
+    </div>
+    <p class="fine">Os dois lados repetiram textos idênticos: um mesmo slogan a favor do 22 aparece 11 vezes num post, um texto contra Lula 10 vezes em outro e uma convocação a favor do 13 9 vezes em dois posts.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <h2>Argumentos dos dois lados</h2>
-    <p class="intro">Números aproximados. Os temas aparecem com a mesma precisão para os dois lados.</p>
+    <p class="intro">Números aproximados, a partir dos temas presentes nos comentários de cada campo.</p>
     <div class="two">
       <div>
-        <h3>Apoio</h3>
+        <h3>Campo Lula</h3>
         <ul>
-          <li><b>Ascensão pela educação (~33).</b> Filhos de trabalhadores que foram os primeiros da família a se formar.</li>
-          <li><b>Redução de desigualdade (~17).</b> Política pública como garantia de direitos e de equidade.</li>
-          <li><b>Voto como continuidade (~20).</b> A escolha nas urnas é ligada à manutenção dos programas.</li>
-          <li><b>Autoria e ampliação nos governos Lula (~8).</b> Criação do ProUni e expansão universitária.</li>
-          <li><b>Bolsa Família como complemento (~6).</b> A renda recebida volta para a economia.</li>
+          <li><b>Votar pensando nas crianças (~110).</b> O voto é justificado pelos filhos, alunos e pelo futuro das crianças.</li>
+          <li><b>Rejeição a falas e propostas do adversário (~165).</b> Falas sobre meninas, ligação com milícia e propostas para o ECA e o ensino público.</li>
+          <li><b>Políticas públicas e direitos (~85).</b> ProUni, SUS, vacinação, ECA digital e ambiental, educação pública.</li>
+          <li><b>Trajetórias de vida (~7).</b> Relatos de quem chegou à universidade por políticas públicas e declara voto. A maioria dos relatos não cita candidatura.</li>
         </ul>
       </div>
       <div>
-        <h3>Crítica</h3>
+        <h3>Campo de oposição</h3>
         <ul>
-          <li><b>Programas anteriores ao PT (~12).</b> Origem de programas em governos anteriores. Concentrado em um perfil.</li>
-          <li><b>Dependência do benefício (~4).</b> O Bolsa Família desestimularia a busca por trabalho.</li>
-          <li><b>Carga tributária (~3).</b> A classe média sustentaria os programas sem ser rica.</li>
-          <li><b>Acesso sem oportunidade depois (~2).</b> O diploma não garante carreira. Amostra pequena.</li>
-          <li><b>Retorno da universidade pública (~2).</b> Questionamento da relevância da pesquisa. Amostra pequena.</li>
+          <li><b>Votar pensando nos filhos e no futuro (~44).</b> O mesmo argumento da campanha, com o voto oposto.</li>
+          <li><b>"20 anos de PT" e pedido de mudança (~41).</b> O governo teria tido tempo e não resolvido os problemas.</li>
+          <li><b>Serviços que não chegam e corrupção (~51).</b> Creches sem vaga, escolas sem estrutura e a corrupção como causa.</li>
+          <li><b>Valores e crítica aos perfis (~41).</b> Aborto, família, religião e a leitura dos posts como partidários.</li>
         </ul>
+        <p class="fine">Análise detalhada na seção seguinte.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>O que diz o campo de oposição</h2>
+    <p class="intro">279 comentários a favor de Flávio Bolsonaro ou contra Lula, incluindo respostas. Quase todos estão nos posts com chamada ao voto: 95 no card "Eu não voto só por mim", 68 no Reels do Alana de 02/10, 60 no carrossel "o que o voto impacta", 42 no carrossel do Alana de 01/10 e 9 no card de 03/10 do Lunetas.</p>
+    <div class="cards three">
+      <div class="card">
+        <span class="tag">Só declaração de voto</span>
+        <p class="big">54%</p>
+        <p>151 comentários apenas declaram voto ou rejeitam o adversário ("22", "Fora PT"), sem argumento identificável.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Com argumento</span>
+        <p class="big">46%</p>
+        <p>128 comentários trazem algum motivo. Nos posts com curtidas na coleta, eles somam 1.590 curtidas, contra 1.264 das declarações simples.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Mais curtido</span>
+        <p class="big">975</p>
+        <p>Curtidas somadas pelos 44 comentários que justificam o voto pelos filhos e pelo futuro. É o argumento de maior alcance do campo.</p>
+      </div>
+    </div>
+    <h3 style="margin-top:30px">Argumentos usados</h3>
+    <p class="intro small">Um comentário pode ter mais de um argumento. Percentuais sobre os 279 comentários do campo. As curtidas indicadas somam só os comentários de posts com curtidas na coleta.</p>
+    <div class="bars" id="opp"></div>
+    <h3 style="margin-top:30px">Críticas ao conteúdo dos posts</h3>
+    <p class="intro small">Além de declarar voto, parte dos comentários contesta diretamente a mensagem dos posts. Os argumentos mais recorrentes, em paráfrase:</p>
+    <ul class="alerts">
+      <li><b>Os direitos não dependem do governo.</b> Estão garantidos em lei e na Constituição, e o post faria as pessoas acreditarem que vão perdê-los.</li>
+      <li><b>A responsabilidade é de estados e municípios.</b> Creche e escola seriam competência local, então a cobrança deveria ir para prefeitos e governadores.</li>
+      <li><b>As políticas não resolveram.</b> Depois de cerca de 20 anos de governos do PT, ainda faltariam vagas em creche, merenda e professores.</li>
+      <li><b>Criança não é pauta só da esquerda.</b> Proteger crianças seria tema de todos, e o perfil estaria tomando partido ao associá-lo a um lado.</li>
+      <li><b>Usar crianças na eleição.</b> Alguns comentários chamam de covardia envolver crianças no debate eleitoral.</li>
+      <li><b>Autoria dos programas.</b> Bolsa Família, FIES e outros programas teriam nascido em governos anteriores ao PT.</li>
+    </ul>
+    <p class="note" style="margin-top:18px">O campo de oposição pouco discute as políticas mostradas nos posts. A maioria apenas declara voto, e quem argumenta desloca a conversa para corrupção, tempo de governo do PT e valores. O argumento mais curtido, porém, usa a mesma moldura da campanha: votar pensando nos filhos. As acusações sobre proteção de meninas aparecem nos dois campos, cada um apontando para o candidato adversário.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Como a audiência leu o posicionamento dos canais</h2>
+    <p class="intro">Os mesmos posts foram lidos de três formas: como posicionamento a celebrar, como posicionamento partidário a rejeitar e como posicionamento insuficiente.</p>
+    <div class="cards three">
+      <div class="card">
+        <span class="tag">Cobram posição explícita</span>
+        <p class="big">9</p>
+        <p>Comentários pedem que os canais digam qual candidatura defendem ou deixem a posição mais clara. Todos são do segundo momento: 6 em posts do Alana e 3 no carrossel "o que o voto impacta" do Lunetas. Tiveram poucas curtidas (no máximo 4).</p>
+      </div>
+      <div class="card">
+        <span class="tag">Elogiam o posicionamento</span>
+        <p class="big">4</p>
+        <p>Agradecem ou parabenizam os canais por se posicionarem, incluindo o perfil público com audiência relevante que comemorou o canal "falar de política".</p>
+      </div>
+      <div class="card">
+        <span class="tag">Rejeitam como partidário</span>
+        <p class="big">~10</p>
+        <p>Dizem que os posts favorecem um lado, anunciam unfollow ou discordam com respeito, como uma seguidora que diz admirar o perfil, mas não concordar com o post.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:18px">Para parte da audiência, o tom não partidário soa como posicionamento; para outra, como omissão. As cobranças por clareza vêm de quem concorda com a pauta e esperava um passo além. Todas as três leituras têm amostra pequena, mas indicam que o tom precisa ser explicado, não só aplicado.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <h2>Onde houve troca entre participantes</h2>
-    <p class="intro">Estimativa feita a partir de @menções, réplicas e discordância explícita.</p>
-    <div class="cards">
+    <p class="intro">Respostas identificadas pela estrutura da conversa ou por começarem com @, além de discordância explícita.</p>
+    <div class="cards three">
       <div class="card">
-        <h3>Autoria das políticas</h3>
-        <p><b>26 comentários</b> de cerca de 10 perfis. Dois perfis somam 17 deles.</p>
-        <p>A troca foi em parte qualificada, com datas, leis e programas, e escalou para ironias e desqualificação da fonte.</p>
+        <span class="tag">Volume</span>
+        <p class="big">725</p>
+        <p>Respostas, concentradas no card "Eu não voto só por mim" (211), no Reels do Alana de 02/10 (185) e no carrossel "o que o voto impacta" (146).</p>
       </div>
       <div class="card">
-        <h3>Bolsa Família e trabalho</h3>
-        <p><b>18 comentários</b> de cerca de 12 perfis.</p>
-        <p>Foi a troca menos qualificada: generalizações sobre beneficiários e rótulos ideológicos, contestados por relatos de quem recebeu o benefício.</p>
+        <span class="tag">Qualidade</span>
+        <p class="big">54</p>
+        <p>Respostas com ofensa ou ataque pessoal (7% das respostas). A maior parte da troca é disputa entre campos e provocação, com poucos argumentos sobre infância.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Exceção</span>
+        <p class="big">7</p>
+        <p>No carrossel com dicas para votar, as respostas tiraram dúvidas sobre levar crianças à seção eleitoral, com informação de quem já atuou como mesária.</p>
       </div>
     </div>
-    <p class="intro" style="margin-top:16px">No conjunto, a troca é periférica (cerca de 17% da base). A maior parte da conversa é de relato e reconhecimento, sem debate.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Os comentários mais curtidos</h2>
+    <p class="intro">Os dez comentários com mais curtidas, descritos em paráfrase. O ranking considera os 1.739 comentários de posts em que a coleta trouxe curtidas; o Reels do Alana de 02/10 e dois posts com um comentário cada ficam de fora.</p>
+    <ol class="toplist" id="toplist"></ol>
+    <p class="fine">Sete dos dez são do campo de oposição, dois do campo Lula e um é relato de vida sem posição eleitoral.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <h2>Sinais que reforçam a estratégia de comunidade</h2>
-    <p class="intro">Organizados pelas categorias do nosso framework de leitura de comunidade. Contagens aproximadas sobre os 262 comentários.</p>
+    <p class="intro">Organizados pelas categorias do nosso framework de leitura de comunidade.</p>
     <div class="cards three">
       <div class="card">
         <span class="tag">Identificação emocional</span>
-        <p class="big">149</p>
-        <p>Comentários de emoção (116) e relatos de vida (33). A pergunta da legenda foi respondida em primeira pessoa: as pessoas contaram a própria história em vez de opinar sobre o tema.</p>
+        <p class="big" style="font-size:1.35rem;line-height:1.2">Pergunta sobre a vida gera relato</p>
+        <p>Foram 36 relatos de vida no primeiro momento contra 11 no segundo, que teve mais de quatro vezes mais comentários. A pergunta sobre a infância vivida é o que abre a conversa em primeira pessoa.</p>
       </div>
       <div class="card">
         <span class="tag">Identificação emocional</span>
         <p class="big" style="font-size:1.35rem;line-height:1.2">Quem se vê no conteúdo volta para conversar</p>
-        <p>Uma das pessoas retratadas na curadoria do Lunetas comentou para agradecer e pediu mais políticas de inclusão. É um caso só, mas reúne identificação, amplificação e ativação cívica, e combina com o maior volume de relatos no formato de curadoria (28 de 33).</p>
+        <p>Uma das pessoas retratadas na curadoria do Lunetas comentou para agradecer e pediu mais políticas de inclusão. Um relato de vida do mesmo post foi o segundo comentário mais curtido de todos.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Ativação cívica</span>
+        <p class="big">~154</p>
+        <p>Comentários que justificam o voto pelas crianças, pelos filhos ou pelo futuro: cerca de 110 no campo Lula e 44 no campo de oposição. A ideia central da campanha foi adotada pelos dois lados, mas virou argumento de disputa.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Ajuda mútua</span>
+        <p class="big">19</p>
+        <p>Comentários no carrossel com dicas para votar, com a menor fatia eleitoral do segundo momento (16%). Seguidores responderam às dúvidas uns dos outros, sem intervenção da marca.</p>
       </div>
       <div class="card">
         <span class="tag">Amplificação e reconhecimento</span>
-        <p class="big">3</p>
-        <p>Comentários que só marcam outra pessoa. Um chama alguém para ver o post. Os outros dois marcam a autora de um relato publicado ali mesmo, como forma de celebrar a história dela: o post virou espaço de reconhecimento entre pessoas que se conhecem.</p>
+        <p class="big">2</p>
+        <p>Comentários que só marcam a autora de um relato publicado no carrossel do ProUni, como forma de celebrar a história dela.</p>
       </div>
       <div class="card">
         <span class="tag">Debate e tensão</span>
         <p class="big">~10</p>
-        <p>Respostas de cerca de 7 perfis que contestaram generalizações sobre beneficiários do Bolsa Família com relatos e argumentos, sem intervenção da marca. A própria comunidade defendeu o espaço de conversa.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Vínculo com o canal</span>
-        <p class="big">~13</p>
-        <p>Cerca de 6 comentários de afeto ou agradecimento direto ao canal ("Te amo, Lunetas", "obrigada pelo conteúdo") e cerca de 7 que reconhecem o formato de vídeos e a trend como algo que já acompanham e esperam.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Ativação cívica</span>
-        <p class="big">~20</p>
-        <p>Comentários que ligam a experiência pessoal a uma decisão pública, como o voto e a continuidade das políticas. O vínculo entre vida e decisão pública existe; o desafio é mantê-lo apartidário.</p>
+        <p>No carrossel do ProUni, cerca de 7 perfis contestaram generalizações sobre beneficiários do Bolsa Família com relatos e argumentos, antes de qualquer intervenção da marca.</p>
       </div>
     </div>
-    <p class="fine">Mudança de comportamento, a quinta categoria do framework, não é observável nesta base, que traz apenas texto dos comentários.</p>
+    <p class="fine">Mudança de comportamento, a quinta categoria do framework, não é observável nesta base, que traz apenas o texto dos comentários.</p>
   </div>
 </section>
 
@@ -411,11 +561,12 @@
   <div class="wrap">
     <h2>Pontos de atenção</h2>
     <ul class="alerts">
-      <li><b>Voz pública lê o post como posicionamento.</b> Um perfil público com audiência relevante comemorou que o canal "falasse de política" e associou o post a um número de candidatura. Cerca de 3 comentários fazem a mesma leitura, e 1 anuncia unfollow pelo motivo inverso. Amostra pequena.</li>
-      <li><b>Leitura partidária de um post apartidário:</b> cerca de 20% dos comentários são eleitorais.</li>
-      <li><b>Generalizações sobre beneficiários do Bolsa Família</b>, incluindo um relato de discurso pejorativo sobre nordestinos que foi contestado no próprio post.</li>
-      <li><b>Ataques pessoais em réplicas</b>, com ironias e rótulos ideológicos.</li>
-      <li><b>Afirmações factuais não verificadas</b> dos dois lados da disputa de autoria. A marca não deve endossá-las em respostas.</li>
+      <li><b>Leitura partidária dos perfis.</b> Cerca de 44% dos comentários têm menção eleitoral. Perfis com audiência relevante e comentários muito curtidos tratam os posts como posicionamento, e há anúncios de unfollow.</li>
+      <li><b>Ataques e ofensas.</b> Cerca de 79 comentários, a maioria em respostas, incluindo xingamentos entre campos e três falas misóginas.</li>
+      <li><b>Repetição de textos.</b> Os dois lados colaram textos idênticos várias vezes, o que pode indicar mobilização organizada. As 124 duplicatas foram excluídas da base.</li>
+      <li><b>Afirmações factuais não verificadas</b> sobre falas, propostas e escândalos atribuídos aos candidatos, dos dois lados. A marca não deve endossá-las em respostas.</li>
+      <li><b>Autopromoção.</b> Cerca de 6 comentários divulgam candidaturas proporcionais ou outros perfis.</li>
+      <li><b>Temas sensíveis.</b> Cerca de 60 comentários mencionam violência sexual contra crianças em contexto de disputa eleitoral. Vale atenção redobrada da moderação.</li>
       <li><b>Repost do Alana:</b> um usuário pergunta por que o comentário dele sumiu, provavelmente porque havia comentado no reels arquivado.</li>
     </ul>
   </div>
@@ -424,7 +575,7 @@
 <section>
   <div class="wrap">
     <h2>Conexão com a narrativa</h2>
-    <p style="max-width:70ch">A conversa nasce da vida concreta, mas a vida concreta que mais aparece é a trajetória adulta: universidade, diploma, carreira. A infância em si, com creche, saúde, merenda, transporte e natureza, surge sobretudo quando a pergunta remete ao cotidiano da criança. Isso sugere que o ângulo da pergunta conduz a escala da resposta. O cruzamento completo está na aba Narrativa × conversa.</p>
+    <p style="max-width:70ch">A narrativa propõe partir da vida e chegar à eleição. Nos posts sobre a infância vivida, a audiência fez esse caminho e contou a própria história. Nos posts com chamada ao voto, a maior parte da audiência foi direto para o candidato, e os dois lados usaram as crianças como argumento. O tom não partidário foi lido ao mesmo tempo como posicionamento e como omissão. O cruzamento completo está na aba Narrativa × conversa.</p>
   </div>
 </section>
 </div>
@@ -434,12 +585,13 @@
 <section>
   <div class="wrap">
     <h2>Curadoria de exemplos</h2>
-    <p class="intro">Trechos curtos de comentários reais, sem nome de usuário, escolhidos para ilustrar cada tema. Ficaram de fora comentários com dados pessoais sensíveis e falas ofensivas.</p>
+    <p class="intro">Trechos curtos de comentários reais, sem nome de usuário, escolhidos para ilustrar cada tema e os dois lados da conversa. O rótulo de cada trecho indica a categoria de posição em relação ao post, explicada na aba Painel. Ficaram de fora comentários com dados pessoais sensíveis e falas ofensivas.</p>
     <div class="filters" role="group" aria-label="Filtrar por canal">
       <button aria-pressed="true" data-f="all">Todos</button>
       <button aria-pressed="false" data-f="alana">Instituto Alana</button>
       <button aria-pressed="false" data-f="lunetas">Lunetas</button>
       <button aria-pressed="false" data-f="cen">Criança e Natureza</button>
+      <button aria-pressed="false" data-f="cec">Criança e Consumo</button>
     </div>
     <div id="examples"></div>
   </div>
@@ -451,7 +603,7 @@
 <section>
   <div class="wrap">
     <h2>Palavras mais ditas</h2>
-    <p class="intro">O tamanho indica em quantos comentários a palavra aparece. Removemos artigos, preposições, @menções e emojis, e juntamos variações ("chorei" e "chorando" contam como "choro"). Expressões como "políticas públicas" e "Bolsa Família" contam como um termo só.</p>
+    <p class="intro">O tamanho indica em quantos comentários a palavra aparece. Removemos artigos, preposições, @menções e emojis, e juntamos variações ("votar" e "voto" contam juntos). Os números 13 e 22 contam também quando escritos com emoji.</p>
     <div class="filters" role="group" aria-label="Escolher canal da nuvem">
       <button aria-pressed="true" data-c="all">Todos</button>
       <button aria-pressed="false" data-c="alana">Instituto Alana</button>
@@ -470,19 +622,24 @@
   <div class="wrap">
     <h2>A pergunta que a narrativa propõe</h2>
     <p style="max-width:70ch;font-size:1.15rem;margin:0 0 18px"><b>Esse conteúdo está ajudando a comunidade a pensar sobre infância e políticas públicas, ou apenas criando uma arena de disputa?</b></p>
-    <div class="cards">
+    <div class="cards three">
       <div class="card">
-        <span class="tag">Pensar sobre políticas públicas</span>
-        <p class="big">~64%</p>
-        <p>A maior parte da conversa é de emoção, relato e defesa da política pública. As pessoas reconheceram a própria vida no conteúdo, que é a função narrativa do primeiro movimento.</p>
+        <span class="tag">Pensar sobre infância e políticas</span>
+        <p class="big">~36%</p>
+        <p>Emoção com o conteúdo, relatos, políticas públicas, direitos, clima, ambiente digital e dúvidas práticas.</p>
       </div>
       <div class="card">
         <span class="tag">Arena de disputa</span>
-        <p class="big">~37%</p>
-        <p>Somadas, manifestação eleitoral (20%) e trocas sobre autoria e Bolsa Família (17%) ocupam pouco mais de um terço da conversa. Cerca de 8 comentários estão nos dois grupos, por isso a soma passa de 100%.</p>
+        <p class="big">~46%</p>
+        <p>Comentários com menção eleitoral ou campo político e ataques, inclusive em respostas.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Outros</span>
+        <p class="big">~24%</p>
+        <p>Respostas pessoais, marcações e comentários sem tema identificável.</p>
       </div>
     </div>
-    <p class="fine">Estimativa a partir dos temas da aba Painel. "Pensar" agrupa emoção e elogio, relatos, defesa da política, natureza e ponderações, sem contar duas vezes o mesmo comentário. "Arena" agrupa manifestação eleitoral e trocas polarizadas.</p>
+    <p class="fine">Cerca de 6% dos comentários estão em "pensar" e em "arena" ao mesmo tempo, por isso a soma passa de 100%. O equilíbrio muda com o momento: no primeiro, a conversa foi majoritariamente de "pensar"; no segundo, de "arena".</p>
   </div>
 </section>
 
@@ -491,20 +648,20 @@
     <h2>A lógica da narrativa e o caminho que a conversa fez</h2>
     <p class="intro">A narrativa propõe partir da vida e chegar à eleição. Abaixo, quantos comentários tocaram cada etapa.</p>
     <div class="flow">
-      <div><b>Vida</b><p class="n">33</p><small>relatos de vida concreta, em primeira pessoa</small></div>
-      <div class="gap"><b>Cuidado</b><p class="n">0</p><small>menções diretas a cuidado ou creche. A origem familiar aparece em 24 comentários, mas como trajetória, não como cuidado</small></div>
-      <div><b>Direitos</b><p class="n">17</p><small>comentários de defesa da política como direito e redução de desigualdade</small></div>
-      <div><b>Políticas públicas</b><p class="n">22</p><small>comentários citam "políticas públicas"; ProUni aparece em 16</small></div>
-      <div><b>Eleição</b><p class="n">52</p><small>manifestações eleitorais</small></div>
+      <div><b>Vida</b><p class="n">47</p><small>relatos de vida concreta, em primeira pessoa</small></div>
+      <div class="gap"><b>Cuidado</b><p class="n">32</p><small>menções a creche, cuidado ou licença parental</small></div>
+      <div><b>Direitos</b><p class="n">115</p><small>menções a direitos e proteção da criança, incluindo o ECA</small></div>
+      <div><b>Políticas públicas</b><p class="n">186</p><small>comentários que citam alguma política pública</small></div>
+      <div><b>Eleição</b><p class="n">1.035</p><small>comentários com menção eleitoral</small></div>
     </div>
-    <p class="note" style="margin-top:18px">A conversa seguiu a lógica proposta, com uma lacuna no cuidado: as pessoas saltaram da própria trajetória direto para o programa que a tornou possível. Em paralelo, 27 comentários fizeram o caminho que a narrativa quer evitar, indo direto para candidato sem passar pela vida concreta.</p>
+    <p class="note" style="margin-top:18px">A conversa ficou concentrada na última etapa. Cuidado e vida concreta, que a narrativa coloca no início do caminho, aparecem pouco. Cerca de 730 comentários foram direto para o candidato, sem passar pelo conteúdo.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <h2>Temas da vida concreta: o que a narrativa lista e o que o público trouxe</h2>
-    <p class="intro">Comentários que mencionam cada tema, por busca de palavras-chave revisada manualmente. Base: 262 comentários.</p>
+    <p class="intro">Comentários que mencionam cada tema, por busca de palavras-chave. Base: 2.329 comentários. Parte das menções aparece em contexto de disputa, e não de relato.</p>
     <div class="bars" id="themes"></div>
   </div>
 </section>
@@ -512,37 +669,37 @@
 <section>
   <div class="wrap">
     <h2>As lentes do ecossistema</h2>
-    <p class="intro">O papel que a narrativa dá a cada canal e o que a audiência de cada um trouxe nos primeiros posts.</p>
+    <p class="intro">O papel que a narrativa dá a cada canal e o que a audiência de cada um trouxe.</p>
     <div class="lens">
       <article class="alana">
         <h3>Instituto Alana</h3>
         <p class="said">Lente política e institucional: direitos, políticas públicas, proteção integral.</p>
-        <p class="said"><b>O que o público trouxe</b>Direitos garantidos na infância: vacinação, escola, SUS, merenda, transporte rural. A lente institucional abriu relatos de infância concreta.</p>
+        <p class="said"><b>O que o público trouxe</b>No Reels sobre infância, relatos de direitos garantidos (vacinação, escola, SUS, merenda, transporte rural). Nos posts de voto, a conversa virou declaração de candidatura, com o ECA e a proteção contra violência sexual usados como argumento de disputa.</p>
       </article>
       <article class="lunetas">
         <h3>Lunetas</h3>
         <p class="said">Lente da vida cotidiana: famílias, escola, saúde, cuidado, experiências concretas.</p>
-        <p class="said"><b>O que o público trouxe</b>Trajetórias familiares ("filha de pedreiro", "primeira da família") e ensino superior. A lente funcionou para gerar histórias, com foco na vida adulta.</p>
+        <p class="said"><b>O que o público trouxe</b>No carrossel do ProUni, trajetórias familiares e ensino superior. Nas dicas para votar, dúvidas práticas resolvidas entre seguidores. Nos cards de voto, a disputa mais intensa entre campos.</p>
       </article>
       <article class="cen">
         <h3>Criança e Natureza</h3>
-        <p class="said">Lente do território e do futuro: natureza, cidades, desigualdades.</p>
-        <p class="said"><b>O que o público trouxe</b>Natureza como aprendizado de respeito ao meio ambiente. Amostra pequena (4 comentários), sem relatos de território.</p>
+        <p class="said">Lente do território e do futuro: natureza, cidades, clima, desigualdades.</p>
+        <p class="said"><b>O que o público trouxe</b>Natureza como aprendizado e convivência, e segurança como condição para brincar no território. Amostra pequena (6 comentários em 2 posts). Clima e natureza aparecem em outros 34 comentários nos posts de Alana e Lunetas.</p>
       </article>
     </div>
-    <p class="fine">Criança e Consumo, lente das relações de consumo e do ambiente digital, entra na próxima leitura. Nenhum comentário dos três posts mencionou internet, telas ou apostas.</p>
+    <p class="fine">Criança e Consumo, lente das relações de consumo e do ambiente digital, teve 1 comentário (aplausos) no post da campanha, incluído na análise. Em todos os posts, ambiente digital e apostas aparecem em apenas 15 comentários.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <h2>Os quatro movimentos da narrativa</h2>
-    <p class="intro">Onde os primeiros posts já tocam cada movimento, segundo o que a audiência comentou.</p>
+    <p class="intro">Onde os posts tocam cada movimento, segundo o que a audiência comentou.</p>
     <div class="moves">
-      <div class="move"><b>1. A vida que as pessoas já estão tentando sustentar</b><p style="margin:0">A função de reconhecimento apareceu: 33 relatos e 116 comentários de emoção. O reconhecimento veio pelo passado (o que existia), não pelo presente (como está a vida de quem cuida hoje).</p><span class="st part">Presente, pelo passado</span></div>
-      <div class="move"><b>2. O que parece individual também é público</b><p style="margin:0">Implícito nos relatos que atribuem a trajetória a uma política ("formada graças ao Sisu"). Não houve comentários sobre dificuldades atuais vividas como problema coletivo.</p><span class="st part">Implícito</span></div>
-      <div class="move"><b>3. Que políticas tornam essa vida possível?</b><p style="margin:0">É o movimento mais presente: ProUni, Sisu, FIES, Bolsa Família, SUS, vacinação e transporte escolar foram nomeados pelo público. É também onde nasceu a disputa sobre autoria.</p><span class="st ok">Forte</span></div>
-      <div class="move"><b>4. O que está em jogo para as próximas gerações?</b><p style="margin:0">Cerca de 6 comentários falam em mudança de gerações, em "não ser exceção" ou no orgulho das versões crianças de quem aparece no post. Outros 4 vêm de quem conta que cresceu sem essas políticas.</p><span class="st part">Sinais iniciais</span></div>
+      <div class="move"><b>1. A vida que as pessoas já estão tentando sustentar</b><p style="margin:0">O reconhecimento apareceu no primeiro momento, com relatos e emoção. Veio pelo passado (o que existia na infância), e não pelo presente de quem cuida hoje.</p><span class="st part">Presente, pelo passado</span></div>
+      <div class="move"><b>2. O que parece individual também é público</b><p style="margin:0">Implícito nos relatos que atribuem a trajetória a uma política pública. Quase não houve comentários sobre dificuldades atuais vividas como problema coletivo.</p><span class="st part">Implícito</span></div>
+      <div class="move"><b>3. Que políticas tornam essa vida possível?</b><p style="margin:0">186 comentários citam políticas como ProUni, SUS, vacinação, ECA e Bolsa Família. No segundo momento, essas políticas viraram argumento de voto e de disputa sobre autoria.</p><span class="st ok">Forte</span></div>
+      <div class="move"><b>4. O que está em jogo para as próximas gerações?</b><p style="margin:0">A ideia de que "o futuro tem rosto" pegou: cerca de 154 comentários justificam o voto pelas crianças e pelos filhos. Mas foi adotada pelos dois campos, como argumento para candidaturas opostas.</p><span class="st part">Adotado, mas disputado</span></div>
     </div>
   </div>
 </section>
@@ -550,18 +707,22 @@
 <section>
   <div class="wrap">
     <h2>Sugestões para conteúdos futuros</h2>
-    <div class="cards three">
+    <div class="cards">
       <div class="card">
-        <h3>Trazer o cuidado para a pergunta</h3>
-        <p>A conversa pulou a etapa do cuidado. Perguntas sobre quem cuidou, e com que apoio, podem ligar os relatos de origem familiar ao território "cuidar é uma questão pública".</p>
+        <h3>Começar pela vida, não pelo voto</h3>
+        <p>A mesma audiência contou histórias quando a pergunta era sobre a infância vivida e declarou candidato quando a chamada era o voto. Manter a pergunta sobre a vida concreta como porta de entrada, mesmo em períodos eleitorais.</p>
       </div>
       <div class="card">
-        <h3>Abrir os temas ausentes</h3>
-        <p>Creche, segurança, envelhecimento, ambiente digital e apostas não apareceram. São justamente os temas que a narrativa lista para mulheres, 70+ e jovens.</p>
+        <h3>Trazer o cuidado e os temas ausentes</h3>
+        <p>Creche e cuidado aparecem em 32 comentários, envelhecimento em 19, ambiente digital e apostas em 15. São os temas que a narrativa associa a mulheres, 70+ e jovens.</p>
       </div>
       <div class="card">
-        <h3>Do passado para o presente</h3>
-        <p>A pergunta sobre o que existia gerou relatos, mas quase nenhuma proposta (2 ponderações). A narrativa registra que perguntas abertas sobre o que precisa existir já geraram propostas concretas antes.</p>
+        <h3>Conteúdo útil gera ajuda mútua</h3>
+        <p>O carrossel com dicas para votar teve a conversa menos polarizada do segundo momento, com seguidores ajudando uns aos outros. Formatos práticos podem equilibrar posts de chamada ao voto.</p>
+      </div>
+      <div class="card">
+        <h3>Preparar a moderação para chamadas ao voto</h3>
+        <p>Os cards de voto concentraram as respostas, os ataques e a repetição de textos. Vale planejar resposta da marca e critérios de moderação antes da publicação.</p>
       </div>
     </div>
   </div>
@@ -571,32 +732,40 @@
 
 <footer class="page">
   <div class="wrap">
-    <p><b>Nota metodológica.</b> Base de 265 comentários exportados das planilhas (Alana e Lunetas) e do print (CeN, total do post), com 262 válidos após a exclusão de 1 duplicata e 2 comentários vazios. Cada comentário recebeu um único tom (apoio, crítica ou neutro) em relação à legenda e à descrição do post. Emojis positivos contam como apoio, e comentários ambíguos ou só eleitorais como neutros. Os temas admitem sobreposição. A nuvem e os temas da narrativa contam em quantos comentários cada termo aparece.</p>
-    <p><b>Limitações.</b> Não há curtidas, alcance nem estrutura de respostas, então debate e troca são estimados pelo texto. Um relato longo do Alana está truncado na exportação. Horários em UTC. Criança e Consumo ainda não entrou na leitura.</p>
+    <p><b>Nota metodológica.</b> Base de 2.489 registros reunidos a partir do documento de comentários (versão em PDF), da planilha do carrossel do ProUni e da coleta manual. Foram 2.329 comentários válidos após excluir 124 duplicatas (incluindo trechos repetidos na cópia) e 36 registros sem texto. Cada comentário recebeu uma única categoria de posição em relação ao conteúdo do post: apoio, crítica ao conteúdo, crítica à forma com apoio à pauta, só eleitoral, conversa entre usuários ou dúvidas e outros. O campo político e os temas são contados à parte e podem se sobrepor. A classificação partiu de regras de palavras-chave, com revisão manual de uma amostra de cerca de 200 comentários, de todos os comentários longos do campo de oposição e de todos os comentários sem posição que não eram respostas nem declarações de voto.</p>
+    <p><b>Limitações.</b> A coleta, feita por plataformas gratuitas de raspagem e manualmente, não alcançou a totalidade: 89% dos 2.625 comentários informados foram analisados. Respostas, curtidas e nomes de usuário só existem onde a coleta os trouxe, e os perfis únicos não são calculáveis. As datas dos comentários são aproximadas, e parte deles foi feita depois do primeiro turno.</p>
     <p><b>Privacidade.</b> Este painel não traz nomes de usuário. A aba de exemplos reproduz trechos curtos de comentários públicos, sem autoria.</p>
   </div>
 </footer>
-
 <script>
-  /* Grade: [canal, apoio, neutro, crítica] */
-  const groups=[["alana",28,4,0],["lunetas",170,34,22],["cen",4,0,0]];
+  /* Grade: cada quadrado = 5 comentários */
+  /* [canal, apoio, sem posição, crítica] em quadrados de 5 */
+  const groups=[["alana",71,130,6],["lunetas",93,148,15],["cen",1,0,0],["cec",1,0,0]];
   const w=document.getElementById("waffle"); let k=0;
   groups.forEach(([ch,a,n,c])=>{
-    [["",a],["n",n],["c",c]].forEach(([t,q])=>{
+    [["",a],["c",c],["n",n]].forEach(([t,q])=>{
       for(let j=0;j<q;j++){
         const d=document.createElement("div");
         d.className="cell "+ch+(t?" "+t:"");
-        d.style.animationDelay=(k++*3)+"ms";
+        d.style.animationDelay=(k++*2)+"ms";
         w.appendChild(d);
       }
     });
+  });
+
+  /* Dois momentos */
+  const fmt=v=>v.toFixed(1).replace(".",",")+"%";
+  const metrics=[["Apoio ao conteúdo",72.5,26.9],["Menção eleitoral",22.5,49.7],["Campo de oposição",0.9,14.6],["Conversa entre usuários",6.8,30.0],["Relatos de vida",8.1,0.6]];
+  ["w1","w2"].forEach((id,i)=>{
+    document.getElementById(id).innerHTML=metrics.map(([n,a,b])=>{const v=i?b:a;
+      return `<div class="metric"><span>${n}</span><div class="tr"><div class="fl" style="width:${Math.max(v,0.5)}%"></div></div><b>${fmt(v)}</b></div>`}).join("");
   });
 
   /* Barras reutilizáveis */
   function bars(el,rows,total,max){
     rows.forEach(([name,n,tone,ex])=>{
       const pct=(n/total*100).toFixed(1).replace(".",",");
-      const width=n/max*100, txt=`${n} · ${pct}%`, inside=width>=20;
+      const width=n/max*100, txt=`${n.toLocaleString("pt-BR")} · ${pct}%`, inside=width>=22;
       const row=document.createElement("div"); row.className="bar-row"+(n===0?" zero":"");
       row.innerHTML=`<div class="label"><b>${name}</b><small>${tone}</small></div>
         <div class="track"><div class="fill" style="width:${Math.max(width,1.5)}%;${n===0?"display:none":""}">${inside?txt:""}</div>${inside?"":`<span class="out">${n===0?"0 · ausente":txt}</span>`}</div>
@@ -605,74 +774,164 @@
     });
   }
   bars(document.getElementById("clusters"),[
-    ["Emoção e elogio",116,"Tom predominante: apoio","Choro, arrepio, orgulho e emojis de aplauso e coração."],
-    ["Manifestação eleitoral",52,"Apoio ou fora do tema","Declarações de voto e hashtags de candidatura."],
-    ["Relato de vida",33,"Apoio","Filhos de motorista, pedreiro e metalúrgico que chegaram à universidade. Transporte rural, merenda e vacinação na infância."],
-    ["Autoria das políticas",26,"Polarizado","Quem criou ProUni, Bolsa Família, FIES e SUS, com datas, leis e governos anteriores contrapostos."],
-    ["Bolsa Família, impostos e trabalho",18,"Polarizado","Dependência e carga tributária contra o benefício como complemento que movimenta a economia."],
-    ["Defesa da política pública",17,"Apoio","Política pública como redução de desigualdade e garantia de direitos."],
-    ["Natureza na infância",3,"Apoio · amostra pequena","Escola com área verde e contato com a natureza como aprendizado."],
-    ["Ponderações e demandas",2,"Neutro · amostra pequena","Acesso ao ensino sem oportunidade de carreira depois; ausência de políticas para a classe média."]
-  ],262,116);
+    ["Menção eleitoral",1035,"Os dois campos","Declarações de voto, números de candidatura e hashtags, em comentários principais ou em respostas."],
+    ["Emoção e elogio",771,"Apoio","Choro, orgulho, aplausos e corações, sobretudo nos posts sobre a infância vivida."],
+    ["Políticas públicas citadas",186,"Apoio e disputa","ProUni, SUS, vacinação, ECA, Bolsa Família e merenda, como relato ou como argumento de voto."],
+    ["Corrupção, crime e valores",178,"Os dois campos","Corrupção, segurança, crime organizado, aborto e família como motivo de voto ou acusação ao adversário."],
+    ["Direitos e proteção da criança",115,"Os dois campos","ECA, prioridade absoluta e proteção contra violência, citados pelos dois lados."],
+    ["Economia, impostos e renda",77,"Disputa","Impostos, auxílio, dependência de programas e custo de vida."],
+    ["Ataques e ofensas",79,"Polarizado","Xingamentos entre campos, a maioria em respostas."],
+    ["Relatos de vida",47,"Apoio","Trajetórias de quem chegou à universidade e lembranças da infância, quase todos no primeiro momento."],
+    ["Natureza e clima",29,"Apoio · amostra pequena","Contato com a natureza e mudanças climáticas afetando as crianças."],
+    ["Ambiente digital e telas",15,"Amostra pequena","Telas, bets e ECA digital."],
+    ["Dúvidas práticas sobre votar",14,"Neutro · amostra pequena","Se crianças podem entrar na seção eleitoral; caronas no dia da eleição."]
+  ],2329,1035);
+  bars(document.getElementById("opp"),[
+    ["Voto pelos filhos e pelo futuro",44,"975 curtidas","Mães e pais dizem votar 22 pensando nos filhos e nas futuras gerações."],
+    ["\"20 anos de PT\" e pedido de mudança",41,"279 curtidas","O PT teria governado por muito tempo sem resolver os problemas; \"do jeito que está, não dá\"."],
+    ["Corrupção",28,"334 curtidas","A corrupção tiraria das crianças os direitos que os posts defendem."],
+    ["Valores: aborto, família, religião",26,"51 curtidas","Defesa da vida desde a concepção, da família e de Deus; rejeição ao comunismo e à censura."],
+    ["Serviços públicos que não chegam",23,"166 curtidas","Creches sem vaga, escolas sem merenda, educação sucateada e fome."],
+    ["Acusações sobre proteção de meninas",16,"151 curtidas","Falas atribuídas a Lula sobre meninas, feminicídio e casos como Marajó e Yanomami."],
+    ["Segurança e crime",16,"172 curtidas","Medo do crime organizado e pedido de penas mais duras."],
+    ["Crítica ao perfil e ao conteúdo",15,"68 curtidas","Perfis chamados de esquerdistas; anúncios de unfollow; post visto como manipulação."],
+    ["Economia, impostos e dependência",11,"40 curtidas · amostra pequena","Impostos, dívida pública e população dependente do governo."]
+  ],279,44);
   bars(document.getElementById("themes"),[
-    ["Ensino superior",29,"Lunetas 28 · Alana 1","ProUni, Sisu, FIES, faculdade, mestrado. Não está na lista da narrativa, mas foi o tema dominante."],
-    ["Mãe, pai e origem familiar",24,"Lunetas 22 · Alana 2","Trajetórias de \"filha de\" e \"filho de\" trabalhadores e de quem foi a primeira da família a se formar."],
-    ["Trabalho e emprego",16,"Lunetas 16","Carreira depois da formação e o debate sobre quem trabalha."],
-    ["Renda (Bolsa Família, auxílio)",14,"Lunetas 12 · Alana 2","Benefício como complemento na infância e como tema de disputa."],
-    ["Escola e educação básica",13,"Lunetas 8 · Alana 5","Merenda, livro didático, material escolar, transporte rural, escola pública."],
-    ["Saúde",4,"Alana 3 · Lunetas 1","Vacinação, posto de saúde e SUS."],
-    ["Natureza e território",3,"Alana 2 · CeN 1","Escola com natureza e contato com o meio ambiente."],
-    ["Moradia",1,"Lunetas 1","Um relato cita o Minha Casa Minha Vida."],
-    ["Creche e cuidado",0,"Ausente","Nenhuma menção direta."],
-    ["Segurança",0,"Ausente","Nenhuma menção ao tema."],
-    ["Envelhecimento e avós",0,"Ausente","Nenhuma menção direta."],
-    ["Ambiente digital e apostas",0,"Ausente","Nenhuma menção a internet, telas ou bets."]
-  ],262,29);
+    ["Segurança e violência",111,"Alana 76 · Lunetas 34 · CeN 1","Crime, armas e milícia, sobretudo em contexto de disputa eleitoral."],
+    ["Escola e educação básica",93,"Lunetas 59 · Alana 34","Escola pública, merenda, professores, pé-de-meia."],
+    ["Ensino superior",81,"Lunetas 64 · Alana 17","ProUni, Sisu, FIES, universidade pública."],
+    ["Trabalho e emprego",78,"Lunetas 50 · Alana 28","Carreira e o debate sobre quem trabalha e quem recebe auxílio."],
+    ["Saúde",64,"Alana 34 · Lunetas 30","SUS, vacinação e postos de saúde."],
+    ["Proteção contra violência sexual",62,"Alana 42 · Lunetas 20","Quase sempre como acusação a candidaturas."],
+    ["Renda e programas sociais",57,"Lunetas 37 · Alana 20","Bolsa Família, auxílios e vale-gás."],
+    ["Natureza, clima e território",36,"Alana 24 · Lunetas 10 · CeN 2","Natureza na infância, território e mudanças climáticas."],
+    ["Creche e cuidado",32,"Lunetas 18 · Alana 13 · CeN 1","Vaga em creche, cuidado com os filhos, licença-maternidade."],
+    ["Envelhecimento e avós",19,"Lunetas 13 · Alana 6","Avós, aposentados e idosos."],
+    ["Ambiente digital e apostas",15,"Alana 9 · Lunetas 6","Telas, bets e ECA digital."],
+    ["Moradia",5,"Lunetas 4 · Alana 1","Minha Casa Minha Vida."]
+  ],2329,111);
 
-  /* Exemplos: [tema, descrição, [[canal, tom, trecho], ...]] */
+  /* Perfil por post */
+  const posts={
+    alana:[
+      ["Reels “O que existia na sua infância porque uma política pública garantiu?”","30/09 · 113 de 131",72.6,1.8,21.2,4.4,"Menções eleitorais 26% · relatos de infância (merenda, vacinação, transporte rural)"],
+      ["Carrossel “Que país estamos escolhendo construir para as crianças?”","01/10 · 336 de 366 · 74 respostas",35.1,3.9,39.0,22.0,"Menções eleitorais 55% (campo Lula 41%, oposição 13%) · 5 cobranças de posicionamento"],
+      ["Reels “O seu voto também decide a infância de quem ainda não pode votar”","02/10 · 588 de 693 · 185 respostas",26.7,2.6,41.0,29.8,"Menções eleitorais 54% (campo Lula 41%, oposição 12%) · 24 ataques"]],
+    lunetas:[
+      ["Carrossel “O efeito ProUni”","29/09 · 326 de 354 · 45 respostas",72.1,2.8,15.6,9.5,"Menções eleitorais 22% · 30 relatos de vida, a maior concentração"],
+      ["Card “Eu não voto só por mim”","01/10 · 408 de 477 · 211 respostas",19.4,10.3,26.5,43.9,"Menções eleitorais 42% (oposição 23%, Lula 18%) · a troca mais intensa"],
+      ["Carrossel com dicas para ir votar","02/10 · 19 de 20 · 7 respostas",21.1,0,15.8,63.2,"Dúvidas práticas respondidas entre seguidores"],
+      ["Carrossel “O que o voto impacta”","02/10 · 411 de 449 · 146 respostas",29.0,5.8,35.0,30.2,"Menções eleitorais 53% (Lula 36%, oposição 15%) · corrupção e políticas públicas"],
+      ["Card “Criança não vota, mas precisa ser prioridade”","03/10 · 121 de 128 · 56 respostas",24.8,0.8,24.8,49.6,"Menções eleitorais 36% (Lula 28%, oposição 7%) · respostas com ofensas pessoais"]],
+    cen:[
+      ["Carrossel “Efeito natureza”","30/09 · 5 de 5",100,0,0,0,"Natureza como aprendizado e como convivência"],
+      ["Card “A vontade de brincar ao ar livre é a mesma”","1 de 1",100,0,0,0,"A única resposta à pergunta do post cita segurança no território"]],
+    cec:[
+      ["Carrossel “Que lugares as crianças ocupam nas escolhas que fazemos hoje?”","1 de 1",100,0,0,0,"Um comentário de aplausos (emoji), incluído na análise"]]
+  };
+  const pc=v=>String(v).replace(".",",")+"%";
+  Object.entries(posts).forEach(([ch,rows])=>{
+    document.getElementById("pl-"+ch).innerHTML=rows.map(([t,m,a,c,e,r,dsc])=>
+      `<div class="prow"><p class="pt">${t}</p><p class="pm">${m}</p>
+       <div class="mini ${ch}" role="img" aria-label="Apoio ${a}%, crítica ${c}%, só eleitoral ${e}%, conversa e outros ${r}%"><span class="a" style="width:${a}%"></span><span class="c" style="width:${c}%"></span><span class="e" style="width:${e}%"></span><span class="r" style="width:${r}%"></span></div>
+       <div class="mini-key ${ch}"><span><i class="sw ${ch}"></i>Apoio ${pc(a)}</span>${c?`<span><i class="sw ${ch} c"></i>Crítica ${pc(c)}</span>`:""}${e?`<span><i class="sw ${ch} e"></i>Só eleitoral ${pc(e)}</span>`:""}${r?`<span><i class="sw ${ch} r"></i>Conversa e outros ${pc(r)}</span>`:""}</div>
+       <p class="pd">${dsc}</p></div>`).join("");
+  });
+
+  /* Mais curtidos (paráfrases) */
+  const topRows=[
+    [270,"Lunetas · card “Eu não voto só por mim”","Diz que, pensando no filho e no futuro do país, não vota em Lula.","o","Oposição"],
+    [211,"Lunetas · carrossel do ProUni","Filha de serralheiro e servente de escola conta que foi a primeira doutora da família.","n","Relato de vida"],
+    [187,"Lunetas · card “Eu não voto só por mim”","Afirma que quem defende crianças não deveria apoiar a esquerda e lamenta seguir o perfil.","o","Oposição · crítica ao perfil"],
+    [174,"Lunetas · card “Eu não voto só por mim”","Declaração de voto no 22.","o","Oposição"],
+    [169,"Lunetas · carrossel do ProUni","Diz que a eleição é sobre desigualdade de classe, e não sobre corrupção.","l","Campo Lula"],
+    [148,"Lunetas · carrossel “O que o voto impacta”","Afirma que a corrupção tira os direitos citados no post e declara voto no 22.","o","Oposição"],
+    [147,"Alana · carrossel de 01/10","Mãe diz temer o crime organizado e declara voto no 22.","o","Oposição"],
+    [137,"Lunetas · card “Eu não voto só por mim”","Declara voto no 22 pensando nas futuras gerações.","o","Oposição"],
+    [132,"Lunetas · carrossel do ProUni","Diz que sempre para tudo para ver esses vídeos, celebra políticas públicas e educação e declara voto no 13.","l","Campo Lula"],
+    [131,"Alana · carrossel de 01/10","Declaração de voto no 22, com esperança.","o","Oposição"]
+  ];
+  document.getElementById("toplist").innerHTML=topRows.map(([n,src,txt,c,lab])=>
+    `<li><span class="lk">${n}</span><div>${txt}<div class="cp">${src}</div></div><span><span class="camp ${c}">${lab}</span></span></li>`).join("");
+
+  /* Exemplos: [tema, descrição, [[canal, rótulo, trecho], ...]] */
   const ex=[
-    ["Relato de vida","Respostas diretas à pergunta da legenda.",[
-      ["lunetas","Apoio","Filha de motorista que estudou até a 5 série e formada graças ao Sisu."],
+    ["Relato de vida","Respostas diretas à pergunta sobre a infância e as políticas públicas.",[
+      ["lunetas","Apoio","Filha de pedreiro formada com muito orgulho ❤️🙌"],
       ["lunetas","Apoio","Fui prouni, fiz mestrado e doutorado. Sou professora e meus melhores alunos sao bolsistas!"],
-      ["lunetas","Apoio","Sou filha de serralheiro e servente de escola e fui a primeira \"Dra\" da família!"],
-      ["alana","Apoio","Transporte na zona rural para ir à escola, materiais escolares e alimentação comprados com bolsa família…"],
-      ["alana","Apoio","Escola de educação infantil pública de qualidade com muita natureza! Como é bom lembrar da minha escolinha"],
-      ["alana","Apoio","Livro didático a gente recebia o que alguém tinha usado no ano anterior…"]
+      ["alana","Apoio","Sou fruto da escola pública e do FIES"],
+      ["alana","Apoio","Escola de educação infantil pública de qualidade com muita natureza! Como é bom lembrar da minha escolinha"]
     ]],
-    ["Natureza na infância","Amostra pequena: um único exemplo.",[
-      ["cen","Apoio","Muita harmonia com a natureza, a criança aprende o respeito pelo meio ambiente."]
+    ["Natureza e clima","Amostra pequena.",[
+      ["cen","Apoio","Muita harmonia com a natureza, a criança aprende o respeito pelo meio ambiente."],
+      ["cen","Apoio","Pra cuidar da natureza precisa a conviver com ela …"],
+      ["cen","Apoio","Segurança principalmente"],
+      ["lunetas","Apoio","Temos que votar pelo presente das nossas crianças, que já são impactadas… pelos efeitos das mudanças climáticas"]
     ]],
-    ["Defesa da política pública","Valorização da política como direito e redução de desigualdade.",[
+    ["Defesa da política pública","Valorização da política como direito.",[
       ["lunetas","Apoio","Políticas públicas cumprindo o papel de reduzir iniquidades, garantir direitos…"],
-      ["alana","Apoio","políticas públicas transformam vidas"],
-      ["lunetas","Apoio","Sonhar, mas mais do que isso, a oportunidade de realizar. É possível!"]
+      ["alana","Apoio","políticas públicas transformam vidas"]
     ]],
-    ["Emoção e elogio","O tipo de comentário mais frequente.",[
-      ["lunetas","Apoio","Eu chorando com o pão na boca."],
+    ["Voto pensando nas crianças: campo Lula","A ideia central da campanha usada como argumento de voto.",[
+      ["alana","Só eleitoral","Pelos meus filhos e alunos 1️⃣3️⃣❤️"],
+      ["lunetas","Apoio","Lula, pelo bem de nossas crianças 1️⃣3️⃣🇧🇷❤️"],
+      ["alana","Apoio","Bora Lula! Pela infância, pela educação, pelos direitos das crianças! É 13!"]
+    ]],
+    ["Voto pensando nas crianças: campo de oposição","O mesmo argumento, com o voto oposto.",[
+      ["alana","Só eleitoral","Futuro concreto e seguro, só com Flávio 22."],
+      ["lunetas","Só eleitoral","Conheço a educação pública de perto, por isso voto 22 🇧🇷"],
+      ["lunetas","Crítica","A corrupção tira TUDO isso de TODOS! 22 🇧🇷"]
+    ]],
+    ["Cobrança de posicionamento mais claro","Os 9 comentários que pedem que os canais digam abertamente sua posição, classificados como crítica à forma, com apoio à pauta. O nome de perfil marcado e um trecho ofensivo foram retirados.",[
+      ["alana","Crítica à forma","…será que o poste tá ajudando? Digam pelo menos que são contra armas nas mãos de crianças.. se posicionem!"],
+      ["alana","Crítica à forma","…fazer post sobre valores tão fundamentais, não é o suficiente. É necessário se posicionar de forma clara e explícita."],
+      ["alana","Crítica à forma","Coloquem qual candidato vocês acreditam que está colocando as crianças em primeiro lugar."],
+      ["alana","Crítica à forma","Tá na hora de abrirem o voto, pq o público de vcs não está entendendo, pelos comentários."],
+      ["alana","Crítica à forma","Por isso que não dá pra ser apartidário e ficar em cima do muro, falando em termos genéricos."],
+      ["alana","Crítica à forma","Se posicionem!"],
+      ["lunetas","Crítica à forma","Entao é 13? Se posicione…"],
+      ["lunetas","Crítica à forma","…o post não tá ajudando. Se posicionem!"],
+      ["lunetas","Crítica à forma","Cadê um posicionamento explícito e direto? Não é hora de dar meias voltas."]
+    ]],
+    ["Elogio ao posicionamento","Amostra pequena.",[
+      ["alana","Apoio","Obrigada por se posicionarem a favor da democracia!"],
+      ["lunetas","Apoio","A página que nunca foge do seu compromisso com as crianças e o bem viver! ❤️"]
+    ]],
+    ["Crítica ao posicionamento dos perfis","Leitura do post como posicionamento partidário.",[
+      ["lunetas","Crítica","Quem fala de proteger criança e adolescente não deveria ser a favor da esquerda!!!!!"],
+      ["lunetas","Crítica","Que absurdo, todos esses direitos são regidos por lei e alternar governantes não faz o direito desaparecer."],
+      ["lunetas","Crítica","Deixei de seguir"],
+      ["lunetas","Crítica","Não é porque eu não voto no Lula que meu voto deixa de ser consciente."]
+    ]],
+    ["Argumentos do campo de oposição","Os motivos mais citados, sem falas ofensivas.",[
+      ["lunetas","Crítica","Pensando no meu filho e no futuro deste pais, não voto no Lula"],
+      ["lunetas","Só eleitoral","Dito isso, se não resolveram em 20 anos no governo, não será agora."],
+      ["lunetas","Crítica","Amanhã é 22, ja que o PT nao fez nada e continuamos a esperar vagas em creche e na saúde!"],
+      ["lunetas","Só eleitoral","Creche é competência do município e as escolas do Estado…"],
+      ["alana","Só eleitoral","Defenda a vida! Não ao aborto! Não a censura! 🇧🇷 22"]
+    ]],
+    ["Críticas a candidaturas","Os dois lados, sem as falas ofensivas.",[
+      ["lunetas","Só eleitoral","O candidato do 22, quer rebocar o ECA."],
+      ["alana","Só eleitoral","Menos arminha, mais universidades públicas! ❤️13❤️"],
+      ["alana","Crítica","Pelo cortes no orçamento da educação durante esse desgoverno: FORA LULA JÁ!"]
+    ]],
+    ["Dúvidas práticas sobre votar","Seguidores ajudando seguidores.",[
+      ["lunetas","Dúvida","Eu li em algum lugar que a criança não pode ir até a urna… tá certo?!"],
+      ["lunetas","Dúvida","🚨Criança não entra na cabina de votação! Lembrem-se disso."]
+    ]],
+    ["Emoção e elogio","O tipo de comentário mais frequente no primeiro momento.",[
+      ["lunetas","Apoio","Eu sempre me emociono"],
       ["cen","Apoio","Que post necessário."],
+      ["cec","Apoio","👏👏👏"],
       ["alana","Apoio","Obrigada pelo post"]
     ]],
-    ["Manifestação eleitoral","Declarações de voto. Quando o comentário só cita candidato, sem reagir ao conteúdo, ele conta como neutro em relação ao post e entra na contagem de menções políticas.",[
-      ["lunetas","Neutro (só eleitoral)","Só temos um candidato que olha pelo povo"],
-      ["lunetas","Apoio","Não é nada difícil escolher no dia 4/10"],
-      ["alana","Neutro (só eleitoral)","Lula no primeiro turno"]
-    ]],
-    ["Autoria das políticas","Os dois lados da disputa, nos próprios termos.",[
-      ["lunetas","Crítica","Lembrando que esses programas foram criados antes do governo do PT…"],
-      ["lunetas","Apoio","prouni foi criado em 2004, no primeiro governo Lula"],
-      ["lunetas","Crítica","é ótimo melhorar algo, como já disse, mas melhorar não é criar."]
-    ]],
-    ["Bolsa Família, impostos e trabalho","Os dois lados da troca, sem as falas ofensivas.",[
-      ["lunetas","Crítica","…virou apoio pras pessoas n buscarem trabalho e dependerem dele pro resto da vida"],
-      ["lunetas","Apoio","Tudo que a classe trabalhadora recebe… volta pra roda da economia e faz o país crescer."],
-      ["lunetas","Neutro","O bolsa família não vai ser extinto, nem que o governo seja de direita."]
-    ]],
     ["Ponderações e demandas","Amostra pequena.",[
-      ["lunetas","Crítica","Uma bolsa pode abrir a porta para a formação, mas não deveria ser confundida com a garantia de um futuro profissional."],
-      ["lunetas","Neutro","…gostaria de saber qual político fará o mesmo pela classe média brasileira."]
+      ["lunetas","Crítica à forma","…precisam ser mais do que isso. De que adianta ampliar o acesso ao ensino superior… se, depois de formado, o profissional não encontra oportunidades"],
+      ["lunetas","Apoio","Na minha época tb não tinha… E hoje não consigo entender como alguém, com todo esses programas, ainda não queira estudar"]
     ]]
   ];
-  const names={alana:"Instituto Alana",lunetas:"Lunetas",cen:"Criança e Natureza"};
+  const names={alana:"Instituto Alana",lunetas:"Lunetas",cen:"Criança e Natureza",cec:"Criança e Consumo"};
   const exBox=document.getElementById("examples");
   ex.forEach(([t,d,items])=>{
     const g=document.createElement("div"); g.className="ex-group";
@@ -690,19 +949,18 @@
     });
   }));
 
-  /* Nuvem: [palavra, nº de comentários] calculado sobre a base válida */
+  /* Nuvem: [palavra, nº de comentários] */
   const clouds={
-    all:[["lula",37],["13",23],["políticas públicas",22],["emoção",17],["governo",17],["programas",16],["prouni",16],["histórias",11],["filha/filho",11],["vida",11],["educação",10],["escola",10],["bolsa família",10],["orgulho",9],["trabalho",9],["primeira da família",9],["família",9],["pública",8],["choro",7],["sociais",6],["vídeos",6],["criou",6],["universidade",5],["fies",5],["efeito",5],["classe",5],["auxílio",5],["brasil",5],["país",4],["estudo",4],["trabalhadores",4],["direita",4],["parabéns",4],["acesso",4],["mestrado",4],["faculdade",4],["formada",3],["povo",3],["cria",3],["fruto",3],["renda",3],["sonhos",3],["realizar",3],["impostos",3],["economia",3],["vacinação",3],["natureza",3]],
-    lunetas:[["lula",35],["13",22],["políticas públicas",19],["emoção",17],["governo",17],["programas",16],["prouni",16],["histórias",11],["filha/filho",11],["vida",10],["orgulho",9],["educação",9],["bolsa família",9],["trabalho",9],["primeira da família",8],["família",8],["choro",7],["pública",7],["escola",6],["sociais",6],["vídeos",6],["criou",6],["universidade",5],["fies",5],["efeito",5],["classe",5],["auxílio",5],["brasil",5],["estudo",4],["trabalhadores",4],["direita",4],["mestrado",4],["parabéns",3],["país",3],["faculdade",3],["formada",3],["povo",3],["cria",3],["fruto",3],["renda",3],["sonhos",3],["realizar",3],["impostos",3],["economia",3]],
-    alana:[["escola",4],["políticas públicas",3],["vacinação",3],["transporte",2],["rural",2],["natureza",2],["escolar",2],["acesso",2],["lula",2],["merenda",1],["saúde",1],["sus",1],["livros",1],["professora",1],["infância",1],["faculdade",1],["família",1],["soberania",1],["13",1]],
-    cen:[["natureza",1],["criança",1],["respeito",1],["meio ambiente",1],["harmonia",1],["aprende",1],["necessário",1]]
+    all:[["13",462],["lula",356],["22",228],["criança",206],["voto",202],["Brasil",125],["educação",117],["governo",101],["PT",84],["país",75],["filhos",68],["políticas públicas",67],["vida",63],["família",62],["flávio",61],["direita",61],["presidente",59],["bolsonaro",59],["direitos",53],["candidato",53],["esquerda",46],["futuro",45],["fora",45],["escola",44],["pública",43],["povo",43],["infância",39],["mulheres",38],["prouni",37],["mulher",34],["qualidade",33],["saúde",33]],
+    alana:[["13",251],["lula",190],["criança",130],["22",102],["voto",83],["Brasil",53],["educação",40],["PT",36],["governo",35],["filhos",34],["políticas públicas",31],["direitos",30],["presidente",29],["país",29],["infância",29],["flávio",29],["candidato",28],["arma",26],["família",25],["futuro",25],["pública",23],["vida",22],["vice",22],["mulheres",22],["bolsonaro",21],["escola",20],["povo",20],["fora",20],["mulher",17],["aborto",17]],
+    lunetas:[["13",211],["lula",166],["22",126],["voto",119],["educação",77],["criança",75],["Brasil",72],["governo",66],["PT",48],["país",46],["direita",46],["vida",41],["bolsonaro",38],["família",37],["políticas públicas",36],["esquerda",35],["filhos",34],["prouni",34],["flávio",32],["presidente",30],["histórias",28],["corrupção",26],["pobre",26],["candidato",25],["fora",25],["escola",24],["direitos",23],["povo",23],["mãe",21],["qualidade",21],["dinheiro",21],["futuro",20]],
+    cen:[["natureza",2],["cuidar",1],["conviver",1],["harmonia",1],["criança",1],["respeito",1],["meio",1],["aprende",1],["ambiente",1],["necessário",1],["segurança",1],["principalmente",1]]
   };
-  const alanaWords=new Set(["vacinação","natureza"]);
   const notes={
-    all:"\"Lula\" e \"13\" lideram porque refletem o volume de manifestações eleitorais, concentradas no post com mais comentários. Palavras com destaque amarelo vêm sobretudo do Instituto Alana. Mínimo de 3 comentários por palavra.",
-    lunetas:"Mínimo de 3 comentários por palavra.",
-    alana:"Base pequena (32 comentários): cada palavra aparece em até 4 comentários. Boa parte dos termos vem de um único relato longo sobre a infância nos anos 70.",
-    cen:"Base de 4 comentários: todas as palavras aparecem uma vez. Leitura apenas ilustrativa."
+    all:"\"13\", \"Lula\" e \"22\" lideram porque refletem o volume de declarações de voto. Entre os termos de conteúdo, \"criança\", \"educação\" e \"políticas públicas\" são os mais citados. Mínimo de 33 comentários por palavra.",
+    alana:"\"Criança\", \"infância\" e \"arma\" aparecem mais no Alana do que no Lunetas. Mínimo de 17 comentários por palavra.",
+    lunetas:"\"Histórias\" e \"ProUni\" vêm do carrossel do primeiro momento; \"corrupção\", \"direita\" e \"esquerda\", dos posts de voto. Mínimo de 20 comentários por palavra.",
+    cen:"Base de 6 comentários em 2 posts: cada palavra aparece uma vez. Leitura apenas ilustrativa. O post de Criança e Consumo teve só um emoji e não gera palavras."
   };
   const cloudEl=document.getElementById("cloud"), noteEl=document.getElementById("cloud-note");
   function drawCloud(key){
@@ -712,9 +970,7 @@
     cloudEl.innerHTML=order.map(([wd,n])=>{
       const t=mx===mn?.6:(Math.sqrt(n)-Math.sqrt(mn))/(Math.sqrt(mx)-Math.sqrt(mn));
       const size=(0.95+t*2.9).toFixed(2);
-      let cls="";
-      if(key==="all"){ if(alanaWords.has(wd)) cls="d-alana"; }
-      return `<span class="${cls}" style="font-size:${size}rem" title="${wd}: ${n} comentário${n>1?"s":""}">${wd}<small>${n}</small></span>`;
+      return `<span style="font-size:${size}rem" title="${wd}: ${n} comentário${n>1?"s":""}">${wd}<small>${n}</small></span>`;
     }).join("");
     cloudEl.setAttribute("aria-label","Nuvem de palavras: "+data.map(d=>d[0]+" "+d[1]).join(", "));
     noteEl.textContent=notes[key];
